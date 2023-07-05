@@ -1,7 +1,0 @@
-This is an overlay containing only the parts of avdi.codes that we want to keep under revision control.
-
-E.g. site-specific plugin, child theme, maybe config.
-
-Useful scripts are found in ./scripts
-
-- ./scripts/copy-from-staging.sh: will overwrite local files with whatever's in staging
