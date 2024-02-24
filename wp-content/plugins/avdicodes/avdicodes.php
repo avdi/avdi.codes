@@ -20,7 +20,7 @@ function avdicodes_rename_subscriptions_to_products(): string {
     return 'Products';
 }
 
-add_filter('the_content', 'avdicodes_rename_subscriptions_to_products_in_content');
+add_filter('the_content', 'avdicodes_rename_subscriptions_to_products_in_content', 10, 1);
 function avdicodes_rename_subscriptions_to_products_in_content($content) {
     // Only run this filter on the main query to avoid unnecessary processing
     if (!is_main_query()) {
