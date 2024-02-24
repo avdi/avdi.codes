@@ -31,7 +31,7 @@ function avdicodes_rename_subscriptions_to_products_in_content($content) {
 
     $dom = new DOMDocument();
     // Load the content. UTF-8 encoding is specified to handle special characters.
-    $dom->loadHTML(mb_convert_encoding($content, 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+    $dom->loadHTML($content);
 
     $xpath = new DOMXPath($dom);
     // Find h1 tags with the class 'mepr_page_header'
