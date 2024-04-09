@@ -20,4 +20,11 @@ function avdicodes_rename_subscriptions_to_products(): string {
     return 'Products';
 }
 
-
+add_filter('webfinger_user_resources', 'avdicodes_add_hachyderm_mastodon_alias', 1, 2);
+function avdicodes_add_hachyderm_mastodon_alias($resources, $user) {
+    if('avdi' === $user->user_login) {
+        $resources[] = 'https://hachyderm.io/@avdi';
+        $resources[] = 'https://hachyderm.io/users/avdi';
+    }
+    return $resources;
+}
