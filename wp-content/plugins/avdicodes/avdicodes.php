@@ -25,6 +25,7 @@ function avdicodes_add_hachyderm_mastodon_alias($resources, $user) {
     if('avdi' === $user->user_login) {
         $resources[] = 'https://hachyderm.io/@avdi';
         $resources[] = 'https://hachyderm.io/users/avdi';
+        $resources[] = 'acct:avdi@hachyderm.io';
     }
     return $resources;
 }
