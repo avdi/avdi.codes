@@ -29,3 +29,12 @@ function avdicodes_add_hachyderm_mastodon_alias($resources, $user) {
     }
     return $resources;
 }
+
+add_filter('activitypub_activity_user_object_array', 'avdicodes_add_aka_to_activity_stream', 10, 3);
+function avdicodes_add_aka_to_activity_stream($array, $object_id, $object) {
+    $user_login = get_userdata($object->get__id())->user_login;
+    if('avdi' === $user_login) {
+        $array['alsoKnownAs'] = ['https://hachyderm.io/users/avdi'];
+    }
+    return $array;
+}
