@@ -8,21 +8,24 @@ Author URI: https://avdi.codes
 */
 
 add_filter('upload_mimes', 'avdicodes_allow_ebook_file_uploads', 1, 1);
-function avdicodes_allow_ebook_file_uploads($mime_types){
-    $mime_types['epub'] = 'application/epub+zip'; 
+function avdicodes_allow_ebook_file_uploads($mime_types)
+{
+    $mime_types['epub'] = 'application/epub+zip';
     $mime_types['mobi'] = 'application/x-mobipocket-ebook';
     $mime_types['html'] = 'text/html';
     return $mime_types;
 }
 
 add_filter('mepr-account-nav-subscriptions-label', 'avdicodes_rename_subscriptions_to_products');
-function avdicodes_rename_subscriptions_to_products(): string {
+function avdicodes_rename_subscriptions_to_products(): string
+{
     return 'Products';
 }
 
 add_filter('webfinger_user_resources', 'avdicodes_add_hachyderm_mastodon_alias', 1, 2);
-function avdicodes_add_hachyderm_mastodon_alias($resources, $user) {
-    if('avdi' === $user->user_login) {
+function avdicodes_add_hachyderm_mastodon_alias($resources, $user)
+{
+    if ('avdi' === $user->user_login) {
         $resources[] = 'https://hachyderm.io/@avdi';
         $resources[] = 'https://hachyderm.io/users/avdi';
         $resources[] = 'acct:avdi@hachyderm.io';
@@ -31,10 +34,115 @@ function avdicodes_add_hachyderm_mastodon_alias($resources, $user) {
 }
 
 add_filter('activitypub_activity_user_object_array', 'avdicodes_add_aka_to_activity_stream', 10, 3);
-function avdicodes_add_aka_to_activity_stream($array, $object_id, $object) {
+function avdicodes_add_aka_to_activity_stream($array, $object_id, $object)
+{
     $user_login = get_userdata($object->get__id())->user_login;
-    if('avdi' === $user_login) {
+    if ('avdi' === $user_login) {
         $array['alsoKnownAs'] = ['https://hachyderm.io/users/avdi'];
     }
     return $array;
+}
+
+add_action('fluent_crm/email_header', 'avdicodes_fluentcrm_add_code_styles_to_emails', 10, 1);
+function avdicodes_fluentcrm_add_code_styles_to_emails($design_name)
+{
+    ?>
+    <style>
+        .red {
+            color: red;
+        }
+
+        pre code.hljs {
+            display: block;
+            overflow-x: auto;
+            padding: 1em
+        }
+
+        code.hljs {
+            padding: 3px 5px
+        }
+
+        .hljs {
+            background: #fefefe;
+            color: #545454
+        }
+
+        .hljs-comment,
+        .hljs-quote {
+            color: #696969
+        }
+
+        .hljs-deletion,
+        .hljs-name,
+        .hljs-regexp,
+        .hljs-selector-class,
+        .hljs-selector-id,
+        .hljs-tag,
+        .hljs-template-variable,
+        .hljs-variable {
+            color: #d91e18
+        }
+
+        .hljs-attribute,
+        .hljs-built_in,
+        .hljs-link,
+        .hljs-literal,
+        .hljs-meta,
+        .hljs-number,
+        .hljs-params,
+        .hljs-type {
+            color: #aa5d00
+        }
+
+        .hljs-addition,
+        .hljs-bullet,
+        .hljs-string,
+        .hljs-symbol {
+            color: green
+        }
+
+        .hljs-section,
+        .hljs-title {
+            color: #007faa
+        }
+
+        .hljs-keyword,
+        .hljs-selector-tag {
+            color: #7928a1
+        }
+
+        .hljs-emphasis {
+            font-style: italic
+        }
+
+        .hljs-strong {
+            font-weight: 700
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+
+            .hljs-addition,
+            .hljs-attribute,
+            .hljs-built_in,
+            .hljs-bullet,
+            .hljs-comment,
+            .hljs-link,
+            .hljs-literal,
+            .hljs-meta,
+            .hljs-number,
+            .hljs-params,
+            .hljs-quote,
+            .hljs-string,
+            .hljs-symbol,
+            .hljs-type {
+                color: highlight
+            }
+
+            .hljs-keyword,
+            .hljs-selector-tag {
+                font-weight: 700
+            }
+        }
+    </style>
+    <?php
 }
