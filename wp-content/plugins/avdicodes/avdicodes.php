@@ -43,6 +43,13 @@ function avdicodes_add_aka_to_activity_stream($array, $object_id, $object)
     return $array;
 }
 
+add_filter('breeze_custom_headers_allow', 'avdicodes_add_breeze_allowed_headers', 10, 1);
+function avdicodes_add_breeze_allowed_headers($allowed_headers) {
+    $allowed_headers[] = 'vary';
+    $allowed_headers[] = 'content-type';
+    return $allowed_headers;
+}
+
 add_action('fluent_crm/email_header', 'avdicodes_fluentcrm_add_code_styles_to_emails', 10, 1);
 function avdicodes_fluentcrm_add_code_styles_to_emails($design_name)
 {
