@@ -21,3 +21,15 @@ https://avdi.codes/author/avdi/
 In theory the `ACTIVITYPUB_SEND_VARY_HEADER` is enough to take care of the author page issue I'd had in the past, where it was replying with only HTML even in response to JSON requests.
 
 I'm nervous about taking out wp-json, but I need to not get slammed every time the fediverse discovers I posted something new.
+
+### 2024-06-16
+
+Added override CSS in the customizer so that HRs would actually show up:
+
+```css
+.wp-block-separator {
+  border-top: 2px solid !important;
+}
+```
+
+Should probably get this into a child theme, but we need a child theme first.
