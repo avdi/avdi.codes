@@ -22,6 +22,10 @@ In theory the `ACTIVITYPUB_SEND_VARY_HEADER` is enough to take care of the autho
 
 I'm nervous about taking out wp-json, but I need to not get slammed every time the fediverse discovers I posted something new.
 
+### 2024-06-15 (more or less)
+
+After trying various caching plugins and talking to the ActivityPub maintainers, have replaced Breeze with WP Super Cache for now. This does not cache AP versions of pages. But it doesn't have the "whichever version gets cached first wins" problem of Breeze and W3 Total Cache.
+
 ### 2024-06-16
 
 Added override CSS in the customizer so that HRs would actually show up:
