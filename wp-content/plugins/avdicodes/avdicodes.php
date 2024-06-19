@@ -50,6 +50,19 @@ function avdicodes_add_breeze_allowed_headers($allowed_headers) {
     return $allowed_headers;
 }
 
+add_filter('widget_posts_args', 'avdicodes_filter_recent_posts_widget', 10, 2);
+function avdicodes_filter_recent_posts_widget($args, $instance) {
+    // Exclude posts with any post format
+    $args['tax_query'] = array(
+        array(
+            'taxonomy' => 'post_format',
+            'operator' => 'NOT EXISTS',
+        ),
+    );
+
+    return $args;
+}
+
 add_action('fluent_crm/email_header', 'avdicodes_fluentcrm_add_code_styles_to_emails', 10, 1);
 function avdicodes_fluentcrm_add_code_styles_to_emails($design_name)
 {
