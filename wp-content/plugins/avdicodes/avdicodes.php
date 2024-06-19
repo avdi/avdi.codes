@@ -63,6 +63,16 @@ function avdicodes_filter_recent_posts_widget($args, $instance) {
     return $args;
 }
 
+add_filter('activitypub_object_content_template', 'avdicodes_activitypub_content_template', 10, 2);
+function avdicodes_activitypub_content_template($template, $object) {
+    $post_format = get_post_format($object) ?: 'standard';
+    if('standard' === $post_format) {
+        return "[ap_excerpt]\n\n[ap_permalink type=\"html\"]\n\n[ap_hashtags]";
+    } else {
+        return "[ap_content]\n\n[ap_hashtags]";
+    }
+}
+
 add_action('fluent_crm/email_header', 'avdicodes_fluentcrm_add_code_styles_to_emails', 10, 1);
 function avdicodes_fluentcrm_add_code_styles_to_emails($design_name)
 {
