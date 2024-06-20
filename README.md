@@ -1,5 +1,51 @@
 # avdi.codes README
 
+## Notes on ActivityPub
+
+### Deletes
+
+I accidentally converted a post back to draft and then deleted it, which resulted in the Delete never propogating out to the fediverse. After much trial and error, the solution turned out to be to create a new post and override its permalink to be that of the old post, at which point the fediverse treated it as the new source of that post's contents.
+
+One important thing I learned along the way is that the Outbox is not used for Delete actions, apparently. Those are sent directly to followers on a cron schedule.
+
+But before I figured this out I did a lot of research on adding stuff to the Outbox and on synthesizing Delete events. So for posterity, even though this **does not work**:
+
+```php
+// add_filter('activitypub_rest_outbox_array', 'avdicodes_activitypub_outbox_extras', 10, 1);
+function avdicodes_activitypub_outbox_extras($json) {
+    $delete_item = [
+        "id" => "https://avdi.codes/#activity-delete-manual-17915-2-2024-06-20-05",
+        "published" => "2024-06-20T15:28:45Z",
+        "to" => [
+                "https://www.w3.org/ns/activitystreams#Public",
+                "https://avdi.codes/wp-json/activitypub/1.0/actors/1/followers"
+            ],
+        "cc" => [],
+        "type" => "Delete",
+        "object" => "https://avdi.codes/17915-2/",
+        "actor" => "https://avdi.codes/author/avdi/",
+        "summary" => "Delete post 17915-2"
+    ];
+    array_unshift($json->orderedItems, $delete_item);
+    $remove_item = [
+        "id" => "https://avdi.codes/#activity-remove-manual-17915-2-2024-06-20-05",
+        "published" => "2024-06-20T15:28:45Z",
+        "to" => [
+                "https://www.w3.org/ns/activitystreams#Public",
+                "https://avdi.codes/wp-json/activitypub/1.0/actors/1/followers"
+            ],
+        "cc" => [],
+        "type" => "Remove",
+        "object" => "https://avdi.codes/17915-2/",
+        "actor" => "https://avdi.codes/author/avdi/",
+        "target" => "https://avdi.codes/wp-json/activitypub/1.0/actors/1/outbox",
+        "summary" => "Remove post 17915-2"
+    ];
+    array_unshift($json->orderedItems, $remove_item);
+    return $json;
+}
+```
+
 ## Logbook
 
 Stuff changed outside this repo but is nonetheless worth noting down:
