@@ -6,7 +6,7 @@
 
 I accidentally converted a post back to draft and then deleted it, which resulted in the Delete never propogating out to the fediverse. After much trial and error, the solution turned out to be to create a new post and override its permalink to be that of the old post, at which point the fediverse treated it as the new source of that post's contents.
 
-One important thing I learned along the way is that the Outbox is not used for Delete actions, apparently. Those are sent directly to followers on a cron schedule.
+One important thing I learned along the way is that the Outbox is not used for Delete actions, apparently. Those are sent directly to followers on a cron schedule. An hourly schedule, specifically. So don't expect it to happen right away.
 
 But before I figured this out I did a lot of research on adding stuff to the Outbox and on synthesizing Delete events. So for posterity, even though this **does not work**:
 
