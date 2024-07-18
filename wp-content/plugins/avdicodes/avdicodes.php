@@ -73,6 +73,13 @@ function avdicodes_activitypub_content_template($template, $object) {
     }
 }
 
+add_action('send_headers', 'avdicodes_suppress_cookies_for_non_html_content');
+function avdicodes_suppress_cookies_for_non_html_content() {
+    if(isset($_SERVER['HTTP_ACCEPT']) && !str_contains($_SERVER['HTTP_ACCEPT'], 'text/html') ) {
+        header_remove('Set-Cookie');
+    }
+}
+
 add_action('fluent_crm/email_header', 'avdicodes_fluentcrm_add_code_styles_to_emails', 10, 1);
 function avdicodes_fluentcrm_add_code_styles_to_emails($design_name)
 {
