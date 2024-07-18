@@ -68,6 +68,19 @@ In theory the `ACTIVITYPUB_SEND_VARY_HEADER` is enough to take care of the autho
 
 I'm nervous about taking out wp-json, but I need to not get slammed every time the fediverse discovers I posted something new.
 
+---
+
+Added `resource` to Breeze cached query strings (https://avdi.codes/wp-admin/options-general.php?page=breeze) so that webfinger queries will be cached. Test with:
+
+```
+curl -v https://avdi.codes/.well-known/webfinger?resource=acct:avdi@avdi.codes
+```
+
+---
+
+Update: having conferred with CloudWays support, and tested 3 different cache plugins (Breeze, WP Rocket, and W3 Total Cache) I have completely disabled caching for now. ALL of the above plugins seem to cause the caching layer(s) to completely ignore content-type and Vary headers, so they break ActivityPub.
+
+
 ### 2024-06-15 (more or less)
 
 After trying various caching plugins and talking to the ActivityPub maintainers, have replaced Breeze with WP Super Cache for now. This does not cache AP versions of pages. But it doesn't have the "whichever version gets cached first wins" problem of Breeze and W3 Total Cache.
