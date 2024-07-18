@@ -1,5 +1,9 @@
 # avdi.codes README
 
+## WPFusion Notes
+
+The `wpf_cookie` tends to mess with naive caching (e.g. Surge); and there is no on/off switch for setting the `wpf_ref` cookie. Instead, you have to disable the lead source fields (such as "original referrer") in the WP Fusion field mapping settings.
+
 ## Notes on ActivityPub
 
 ### Deletes
