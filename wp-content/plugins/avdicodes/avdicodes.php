@@ -7,6 +7,31 @@ Author: Avdi Grimm
 Author URI: https://avdi.codes
 */
 
+add_action('pre_get_posts', 'avdicodes_exclude_status_posts');
+function avdicodes_exclude_status_posts($query) {
+    if (!is_admin() && $query->is_main_query()) {
+        // Get existing tax queries if any
+        $tax_queries = $query->get('tax_query') ? $query->get('tax_query') : array();
+        
+        // Add our new tax query
+        $tax_queries[] = array(
+            'taxonomy' => 'post_format',
+            'field' => 'slug',
+            'terms' => 'post-format-status',
+            'operator' => 'NOT IN'
+        );
+
+        // If there are multiple tax queries, define the relationship
+        if (count($tax_queries) > 1) {
+            $tax_queries['relation'] = 'AND';
+        }
+
+        // Set the modified tax query array
+        $query->set('tax_query', $tax_queries);
+    }
+    return $query;
+}
+
 add_filter('upload_mimes', 'avdicodes_allow_ebook_file_uploads', 1, 1);
 function avdicodes_allow_ebook_file_uploads($mime_types)
 {
