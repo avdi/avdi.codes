@@ -7,17 +7,23 @@ Author: Avdi Grimm
 Author URI: https://avdi.codes
 */
 
-add_action('pre_get_posts', 'avdicodes_exclude_status_posts');
-function avdicodes_exclude_status_posts($query) {
+add_action('pre_get_posts', 'avdicodes_exclude_format_posts');
+function avdicodes_exclude_format_posts($query) {
     if (!is_admin() && $query->is_main_query()) {
         // Get existing tax queries if any
         $tax_queries = $query->get('tax_query') ? $query->get('tax_query') : array();
         
-        // Add our new tax query
+        // Add our new tax query to exclude multiple post formats
         $tax_queries[] = array(
             'taxonomy' => 'post_format',
             'field' => 'slug',
-            'terms' => 'post-format-status',
+            'terms' => array(
+                'post-format-aside',
+                'post-format-link',
+                'post-format-image',
+                'post-format-quote',
+                'post-format-status'
+            ),
             'operator' => 'NOT IN'
         );
 
