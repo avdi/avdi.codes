@@ -9,7 +9,8 @@ Author URI: https://avdi.codes
 
 add_action('pre_get_posts', 'avdicodes_exclude_format_posts');
 function avdicodes_exclude_format_posts($query) {
-    if (!is_admin() && $query->is_main_query()) {
+    // Only apply to main query, not in admin, AND only on the blog front page
+    if (!is_admin() && $query->is_main_query() && is_home()) {
         // Get existing tax queries if any
         $tax_queries = $query->get('tax_query') ? $query->get('tax_query') : array();
         
