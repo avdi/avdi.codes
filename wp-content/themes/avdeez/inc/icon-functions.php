@@ -1,0 +1,68 @@
+<?php
+/**
+ * SVG icons related functions.
+ *
+ * @package Hermes
+ */
+
+/**
+ * Prints the SVG code for a given icon.
+ *
+ * @SuppressWarnings(PHPMD.StaticAccess)
+ */
+function avdeez_icon_svg( $icon, $size = 24 ) {
+	echo avdeez_get_icon_svg( $icon, $size );
+}
+
+/**
+ * Gets the SVG code for a given icon.
+ *
+ * @SuppressWarnings(PHPMD.StaticAccess)
+ */
+function avdeez_get_icon_svg( $icon, $size = 24 ) {
+	return Themes_Harbor_SVG_Icons ::get_svg( 'ui', $icon, $size );
+}
+
+/**
+ * Gets the SVG code for a given social icon.
+ *
+ * @SuppressWarnings(PHPMD.StaticAccess)
+ */
+function avdeez_get_social_icon_svg( $icon, $size = 24 ) {
+	return Themes_Harbor_SVG_Icons ::get_svg( 'social', $icon, $size );
+}
+
+/**
+ * Detects the social network from a URL and returns the SVG code for its icon.
+ *
+ * @SuppressWarnings(PHPMD.StaticAccess)
+ */
+function avdeez_get_social_link_svg( $uri, $size = 24 ) {
+	return Themes_Harbor_SVG_Icons ::get_social_link_svg( $uri, $size );
+}
+
+/**
+ * Display SVG icons in social links menu.
+ *
+ * @param  string  $item_output The menu item output.
+ * @param  WP_Post $item        Menu item object.
+ * @param  int     $depth       Depth of the menu.
+ * @param  object   $args        wp_nav_menu() arguments.
+ * @return string  $item_output The menu item output with social icon.
+ */
+function avdeez_nav_menu_social_icons( $item_output, $item, $depth, $args ) {
+	// Change SVG icon inside social links menu if there is supported URL.
+	if ( 'social' === $args->theme_location ) {
+		$atts['title'] = esc_attr( $item->title );
+		$svg           = avdeez_get_social_link_svg( $item->url, 18 );
+
+		if ( empty( $svg ) ) {
+			$svg = avdeez_get_icon_svg( 'link', 18 );
+		}
+
+		$item_output = str_replace( $args->link_after, '</span>' . $svg, $item_output );
+	}
+
+	return $item_output;
+}
+add_filter( 'walker_nav_menu_start_el', 'avdeez_nav_menu_social_icons', 10, 4 );
