@@ -1,5 +1,25 @@
 @charset "UTF-8";
 /*--------------------------------------------------------------
+## Avdeez Customizations
+--------------------------------------------------------------*/
+
+/* Let highlight.js control code block backgrounds */
+code.hljs {
+  background-color: rgba(248, 248, 248, 0.0);
+}
+
+/* Make horizontal rules visible (Core styles hide them) */
+.wp-block-separator {
+  border-top: 2px solid !important;
+}
+
+/* Lighter blockquote border */
+.wp-block-quote {
+  border: 0 solid;
+  border-inline-start: 1px solid;
+}
+
+/*--------------------------------------------------------------
 ## Cover Block Base Styles (for PHP-templated covers)
 ## WordPress no longer loads block CSS on-demand for these
 --------------------------------------------------------------*/
