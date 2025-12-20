@@ -189,42 +189,19 @@ if ( ! function_exists( 'avdeez_enqueue_block_styles' ) ) :
 	 * Enqueue individual block stylesheets.
 	 */
 	function avdeez_enqueue_block_styles() {
-		// Get all available block namespaces.
 		$block_namespaces = glob( dirname( __FILE__ ) . '/assets/styles/blocks/*/' );
-		$suffix           = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-
-		$block_namespaces = array_map(
-			function( $type_path ) {
-				return basename( $type_path );
-			},
-			$block_namespaces
-		);
+		$block_namespaces = array_map( 'basename', $block_namespaces );
 
 		foreach ( $block_namespaces as $block_namespace ) {
-
-			// Get all available block styles of the given block namespace.
 			$block_styles = glob( dirname( __FILE__ ) . '/assets/styles/blocks/' . $block_namespace . '/*.css' );
-
-			$block_styles = array_reduce(
-				$block_styles,
-				function( $carry, $styles_path ) {
-					$basename = basename( $styles_path, '.css' );
-					// Check if $basename has .min in its name.
-					if ( strpos( $basename, '.min' ) === false ) {
-						$carry[] = $basename;
-					}
-					return $carry;
-				},
-				array()
-			);
+			$block_styles = array_map( fn( $path ) => basename( $path, '.css' ), $block_styles );
 
 			foreach ( $block_styles as $block_style ) {
-				// Enqueue individual block stylesheets.
 				wp_enqueue_block_style(
 					$block_namespace . '/' . $block_style,
 					array(
 						'handle' => 'avdeez-' . $block_namespace . '-' . $block_style . '-styles',
-						'src'    => get_theme_file_uri( 'assets/styles/blocks/' . $block_namespace . '/' . $block_style . "{$suffix}.css" ),
+						'src'    => get_theme_file_uri( 'assets/styles/blocks/' . $block_namespace . '/' . $block_style . '.css' ),
 						'path'   => get_theme_file_path( 'assets/styles/blocks/' . $block_namespace . '/' . $block_style . '.css' ),
 					)
 				);
@@ -238,81 +215,46 @@ add_action( 'after_setup_theme', 'avdeez_enqueue_block_styles' );
  * Enqueue scripts and styles.
  */
 function avdeez_scripts() {
-	// Cache directory uri.
 	$template_directory_uri = get_template_directory_uri();
-	$suffix                 = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 	$is_singular            = is_singular();
 	$is_grid_template       = is_page_template( 'templates/grid-page.php' );
 
-	// Register global styles.
-	wp_register_style(
-		'avdeez-templates-core-global',
-		$template_directory_uri . "/assets/styles/templates/core/global{$suffix}.css",
-		array(),
-		'3.6.0'
-	);
+	wp_register_style( 'avdeez-templates-core-global', $template_directory_uri . '/assets/styles/templates/core/global.css', [], '3.6.0' );
+	wp_register_style( 'avdeez-templates-core-comments', $template_directory_uri . '/assets/styles/templates/core/comments.css', [], '3.6.0' );
+	wp_register_style( 'avdeez-templates-core-hfeed', $template_directory_uri . '/assets/styles/templates/core/hfeed.css', [], '3.6.0' );
 
-	// Register comments styles.
-	wp_register_style(
-		'avdeez-templates-core-comments',
-		$template_directory_uri . "/assets/styles/templates/core/comments{$suffix}.css",
-		array(),
-		'3.6.0'
-	);
-
-	// Register hfeed styles.
-	wp_register_style(
-		'avdeez-templates-core-hfeed',
-		$template_directory_uri . "/assets/styles/templates/core/hfeed{$suffix}.css",
-		array(),
-		'3.6.0'
-	);
-
-	wp_enqueue_style( 'avdeez-style', $template_directory_uri . "/style{$suffix}.css", array(), '3.5.0' );
+	wp_enqueue_style( 'avdeez-style', $template_directory_uri . '/style.css', [], '3.5.0' );
 	wp_style_add_data( 'avdeez-style', 'rtl', 'replace' );
 
 	if ( is_child_theme() ) {
-		wp_enqueue_style( 'avdeez-child-style', get_stylesheet_uri(), array( 'avdeez-style' ) );
+		wp_enqueue_style( 'avdeez-child-style', get_stylesheet_uri(), [ 'avdeez-style' ] );
 	}
 
-	// Enqueue global styles.
 	wp_enqueue_style( 'avdeez-templates-core-global' );
 
-	// Load styles needed for singular views.
 	if ( $is_singular ) {
-		// Load JS functionliaty needed for single views.
-		wp_enqueue_script( 'avdeez-singular-script', $template_directory_uri . "/assets/js/public/pages/singular{$suffix}.js", array(), '3.0.0', true );
-
-		// Load singular styles.
-		wp_enqueue_style( 'avdeez-singular-style', $template_directory_uri . "/assets/css/pages/singular/singular{$suffix}.css", array( 'avdeez-style' ), '3.4.3' );
+		wp_enqueue_script( 'avdeez-singular-script', $template_directory_uri . '/assets/js/public/pages/singular.js', [], '3.0.0', true );
+		wp_enqueue_style( 'avdeez-singular-style', $template_directory_uri . '/assets/css/pages/singular/singular.css', [ 'avdeez-style' ], '3.4.3' );
 		wp_style_add_data( 'avdeez-singular-style', 'rtl', 'replace' );
-		wp_style_add_data( 'avdeez-singular-style', 'suffix', $suffix );
 
-		// Load reply script only when it is needed.
 		if ( comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
 
-		// Load comments styles only when it is needed.
 		if ( get_comments_number() || comments_open() ) {
 			wp_enqueue_style( 'avdeez-templates-core-comments' );
 		}
 	}
 
-	if ( $is_grid_template || ( ! $is_singular && ! $is_grid_template ) ) {
-		// Load hfeed and 404 styles.
+	if ( $is_grid_template || ! $is_singular ) {
 		wp_enqueue_style( 'avdeez-templates-core-hfeed' );
 	}
 
-	wp_enqueue_script( 'avdeez-script', $template_directory_uri . "/assets/js/public/avdeez{$suffix}.js", array(), '3.4.0', true );
-
-	wp_localize_script( 'avdeez-script',
-		'screenReaderText',
-		array(
-			'expand'   => esc_html__( 'Expand child menu', 'avdeez' ),
-			'collapse' => esc_html__( 'Collapse child menu', 'avdeez' ),
-		)
-	);
+	wp_enqueue_script( 'avdeez-script', $template_directory_uri . '/assets/js/public/avdeez.js', [], '3.4.0', true );
+	wp_localize_script( 'avdeez-script', 'screenReaderText', [
+		'expand'   => esc_html__( 'Expand child menu', 'avdeez' ),
+		'collapse' => esc_html__( 'Collapse child menu', 'avdeez' ),
+	] );
 }
 add_action( 'wp_enqueue_scripts', 'avdeez_scripts' );
 

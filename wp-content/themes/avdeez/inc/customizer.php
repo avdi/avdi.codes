@@ -168,8 +168,6 @@ function avdeez_sanitize_checkbox( $input ) {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function avdeez_customize_preview_js() {
-	$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-
-	wp_enqueue_script( 'avdeez_customizer', get_template_directory_uri() . "/assets/js/admin/customizer{$suffix}.js", array( 'customize-preview' ), '20130508', true );
+	wp_enqueue_script( 'avdeez_customizer', get_template_directory_uri() . '/assets/js/admin/customizer.js', [ 'customize-preview' ], '20130508', true );
 }
 add_action( 'customize_preview_init', 'avdeez_customize_preview_js' );
