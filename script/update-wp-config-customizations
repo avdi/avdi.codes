@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -e # fail on error
+
+: "${TARGET_FILE:=wp-config.php}"
+: "${CUSTOM_FILE:=${BASH_SOURCE%/*}/../config/wp-config-customizations.php}"
+: "${OPEN_FENCE:=BEGIN_GRACEFULDEV_CUSTOM}"
+: "${CLOSE_FENCE:=END_GRACEFULDEV_CUSTOM}"
+: "${ANCHOR:=That\'s all, stop editing! Happy blogging}"
+
+set -x # echo full command line
+cp "${TARGET_FILE}" "${TARGET_FILE}.bak"
+
+
+insert_block=$(awk -f "${BASH_SOURCE%/*}/extract-fenced-block.awk" \
+  -v open_fence="$OPEN_FENCE" \
+  -v close_fence="$CLOSE_FENCE" < "$CUSTOM_FILE")
+  
+ awk -f "${BASH_SOURCE%/*}/update-fenced-block.awk" \
+  -v open_fence="$OPEN_FENCE" \
+  -v close_fence="$CLOSE_FENCE" \
+  -v anchor="$ANCHOR" \
+  -v insert_block="$insert_block" \
+  < "${TARGET_FILE}" > "${TARGET_FILE}.updated" \
+  && mv "${TARGET_FILE}.updated" "${TARGET_FILE}"

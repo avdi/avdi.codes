@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Update wp-config.php
+
+set -e # fail on error
+DEPLOY_USER=${DEPLOY_USER:?DEPLOY_USER is required}
+DEPLOY_HOST=${DEPLOY_HOST:?DEPLOY_HOST is required}
+DEPLOY_ROOT=${DEPLOY_ROOT:?DEPLOY_ROOT is required}
+SSHOPTS="-o StrictHostKeyChecking=no"
+
+set -x # echo full command line
+ssh $SSHOPTS ${DEPLOY_USER}@${DEPLOY_HOST} -- "cd $DEPLOY_ROOT && ./script/update-wp-config-customizations"
