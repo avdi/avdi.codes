@@ -13,11 +13,6 @@ code.hljs {
   border-top: 2px solid !important;
 }
 
-/* Lighter blockquote border */
-.wp-block-quote {
-  border: 0 solid;
-  border-inline-start: 1px solid;
-}
 
 /*--------------------------------------------------------------
 ## Cover Block Base Styles (for PHP-templated covers)
