@@ -100,3 +100,25 @@ Added override CSS in the customizer so that HRs would actually show up:
 ```
 
 Should probably get this into a child theme, but we need a child theme first.
+
+### 2024-07-18
+
+Switched from WP Super Cache to [Surge](https://wordpress.org/plugins/surge/) for caching. Surge is a simpler, file-based cache that supports content negotiation via a `cache-config.php` file.
+
+Added `cache-config.php` with:
+- Content negotiation for ActivityPub (caches HTML and JSON variants separately)
+- `fpassthru()` polyfill because Cloudways disables it
+- Ignores `wpf_ref` cookie to prevent WPFusion from busting cache
+
+### 2024-12-20
+
+Forked the Hermes theme as "Avdeez" (`wp-content/themes/avdeez/`). The original Hermes theme by Themes Harbor is end-of-life, and a WordPress update broke it.
+
+**Problem:** WordPress 6.x loads block CSS on-demand. Hermes uses `.wp-block-cover` classes in PHP templates (not actual Gutenberg blocks), so Core's cover block CSS was never loaded. This caused featured images to not display and the parallax scroll effect to break.
+
+**Fix:** Added explicit cover block base styles to `assets/styles/templates/core/global.css`:
+- `position: absolute` and `object-fit: cover` for background images
+- `min-height: 100vh` for `.fullscreen-header` (single post hero images)
+- Proper z-index stacking for overlay effects
+
+The pristine Hermes theme is preserved in git history (commit `5993130`).
