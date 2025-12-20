@@ -1,0 +1,707 @@
+# Copyright (C) 2024 Hermes
+# This file is distributed under the same license as the Hermes package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Hermes\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: Themes Harbor\n"
+"Report-Msgid-Bugs-To: Hermes\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: 404.php:15
+msgid "Oops! That page can't be found."
+msgstr ""
+
+#: 404.php:21
+msgid "404"
+msgstr ""
+
+#: 404.php:25
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr ""
+
+#. translators: %s is a placeholder that will be replaced by a variable passed as an argument.
+#: comments.php:29
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:49
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:29
+msgid "Back to top"
+msgstr ""
+
+#: functions.php:56
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:57
+msgid "Social Menu"
+msgstr ""
+
+#: functions.php:182
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:184
+msgid "Appears in the sidebar section of the site."
+msgstr ""
+
+#: functions.php:192
+msgid "Footer"
+msgstr ""
+
+#: functions.php:194
+msgid "Appears in the footer section of the site."
+msgstr ""
+
+#: functions.php:328
+msgid "Expand child menu"
+msgstr ""
+
+#: functions.php:329
+msgid "Collapse child menu"
+msgstr ""
+
+#: header.php:25
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:57
+msgid "Primary menu"
+msgstr ""
+
+#: header.php:68
+msgid "Social links menu"
+msgstr ""
+
+#: header.php:76
+msgid "Menu"
+msgstr ""
+
+#: header.php:89
+msgid "Open a search form in a modal window"
+msgstr ""
+
+#: searchform.php:14, searchform.php:18
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:16
+msgctxt "placeholder"
+msgid "Search this website&hellip;"
+msgstr ""
+
+#: searchform.php:22, template-parts/global/site-search-form.php:20
+msgid "Search"
+msgstr ""
+
+#: singular.php:25
+msgid "Next Post"
+msgstr ""
+
+#: singular.php:26
+msgid "Previous Post"
+msgstr ""
+
+#. translators: %s: WordPress Version.
+#. translators: %s: WordPress Version.
+#. translators: %s: WordPress Version.
+#: inc/back-compat.php:35, inc/back-compat.php:51, inc/back-compat.php:73
+msgid "This theme requires WordPress 5.8 or newer. You are running version %s. Please upgrade. It is very crucial to keep your WordPress installation up to date for security reasons. If some of your plugins do not support the latest WordPress version then contact the author of the plugin."
+msgstr ""
+
+#: inc/custom-colors.php:21
+msgid "Primary (dark)"
+msgstr ""
+
+#: inc/custom-colors.php:26
+msgid "Primary (base)"
+msgstr ""
+
+#: inc/custom-colors.php:31
+msgid "Primary (light)"
+msgstr ""
+
+#: inc/custom-colors.php:36
+msgid "Secondary (dark)"
+msgstr ""
+
+#: inc/custom-colors.php:41
+msgid "Secondary (base)"
+msgstr ""
+
+#: inc/custom-colors.php:46
+msgid "Secondary (light)"
+msgstr ""
+
+#: inc/custom-colors.php:51
+msgid "Accent (dark)"
+msgstr ""
+
+#: inc/custom-colors.php:56
+msgid "Accent (base)"
+msgstr ""
+
+#: inc/custom-colors.php:61
+msgid "Accent (light)"
+msgstr ""
+
+#: inc/custom-colors.php:153
+msgid "Accent Color"
+msgstr ""
+
+#: inc/custom-colors.php:166
+msgid "Primary Color"
+msgstr ""
+
+#: inc/custom-colors.php:179
+msgid "Secondary Color"
+msgstr ""
+
+#: inc/customizer.php:21
+msgid "Theme Options"
+msgstr ""
+
+#: inc/customizer.php:26
+msgid "General Options"
+msgstr ""
+
+#: inc/customizer.php:38
+msgid "Sidebar Position"
+msgstr ""
+
+#: inc/customizer.php:42, inc/customizer.php:102
+msgid "Right"
+msgstr ""
+
+#: inc/customizer.php:43, inc/customizer.php:101
+msgid "Left"
+msgstr ""
+
+#: inc/customizer.php:46
+msgid "By default the Hermes theme will show the sidebar on the right side of your site. Use this option to change the position of your sidebar."
+msgstr ""
+
+#: inc/customizer.php:56
+msgid "Grid Layout"
+msgstr ""
+
+#: inc/customizer.php:60
+msgid "Default"
+msgstr ""
+
+#: inc/customizer.php:61
+msgid "One column"
+msgstr ""
+
+#: inc/customizer.php:62
+msgid "Two columns"
+msgstr ""
+
+#: inc/customizer.php:63
+msgid "Three columns"
+msgstr ""
+
+#: inc/customizer.php:66
+msgid "Use this option to change a layout of the grid shown in archive views and the Grid Page templates."
+msgstr ""
+
+#: inc/customizer.php:71
+msgid "Header Options"
+msgstr ""
+
+#: inc/customizer.php:83
+msgid "Enable sticky header mode"
+msgstr ""
+
+#: inc/customizer.php:87
+msgid "The header links will remain in view, even as a user scrolls down the page."
+msgstr ""
+
+#: inc/customizer.php:97
+msgid "Mobile Menu Position"
+msgstr ""
+
+#: inc/customizer.php:105
+msgid "By default the Hermes theme will show the mobile menu on the left side of your site. Use this option to change the position of your mobile menu."
+msgstr ""
+
+#: inc/customizer.php:116
+msgid "Footer Credits"
+msgstr ""
+
+#: inc/customizer.php:118
+msgid "You can add your own credit text to WordPress footer by using this option."
+msgstr ""
+
+#: inc/extras.php:132, templates/blank-content-area-page.php:15
+msgid "Pages:"
+msgstr ""
+
+#: inc/extras.php:136
+msgid "Page"
+msgstr ""
+
+#: inc/register-global-styles.php:19
+msgid "Rounded image"
+msgstr ""
+
+#: inc/register-global-styles.php:28
+msgid "Borders"
+msgstr ""
+
+#: inc/register-global-styles.php:37
+msgid "Inline list"
+msgstr ""
+
+#: inc/register-global-styles.php:46
+msgid "Minimal"
+msgstr ""
+
+#: inc/register-global-styles.php:55, inc/register-global-styles.php:64
+msgid "Border separate"
+msgstr ""
+
+#: inc/template-tags.php:35
+msgctxt "post date"
+msgid "Posted on"
+msgstr ""
+
+#: inc/template-tags.php:44
+msgctxt "post author"
+msgid "by"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:60, inc/template-tags.php:66
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:62
+msgid "This entry was posted in:"
+msgstr ""
+
+#: inc/template-tags.php:68
+msgid "Tagged with:"
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#. translators: %s: Name of current post. Only visible to screen readers
+#. translators: %s: Name of current post. Only visible to screen readers
+#: inc/template-tags.php:76, template-parts/singular/content-page.php:21, template-parts/singular/page-header-grid.php:43
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#. translators: 1: comment count number, 2: title.
+#: inc/template-tags.php:143
+msgctxt "comments link"
+msgid "comment on &ldquo;%s&rdquo;"
+msgid_plural "comments on &ldquo;%s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/template-tags.php:271
+msgctxt "author links"
+msgid "Twitter profile"
+msgstr ""
+
+#: inc/template-tags.php:275
+msgctxt "author links"
+msgid "Facebook profile"
+msgstr ""
+
+#: inc/template-tags.php:278
+msgctxt "author links"
+msgid "Instagram profile"
+msgstr ""
+
+#: inc/template-tags.php:281
+msgctxt "author links"
+msgid "LinkedIn profile"
+msgstr ""
+
+#: inc/template-tags.php:284
+msgctxt "author links"
+msgid "Pinterest profile"
+msgstr ""
+
+#: inc/template-tags.php:287
+msgctxt "author links"
+msgid "MySpace profile"
+msgstr ""
+
+#: inc/template-tags.php:290
+msgctxt "author links"
+msgid "SoundCloud profile"
+msgstr ""
+
+#: inc/template-tags.php:293
+msgctxt "author links"
+msgid "Tumblr profile"
+msgstr ""
+
+#: inc/template-tags.php:296
+msgctxt "author links"
+msgid "YouTube profile"
+msgstr ""
+
+#: inc/template-tags.php:299
+msgctxt "author links"
+msgid "Wikipedia page"
+msgstr ""
+
+#: inc/template-tags.php:302
+msgctxt "author links"
+msgid "Personal website"
+msgstr ""
+
+#: inc/template-tags.php:365
+msgid "About the author"
+msgstr ""
+
+#: inc/template-tags.php:379
+msgid "View all posts by %s"
+msgstr ""
+
+#: inc/template-tags.php:422
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: inc/template-tags.php:424
+msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#: templates/blank-content-area-page.php:3
+msgid "Blank content area page"
+msgstr ""
+
+#. translators: %s: Name of current post
+#: templates/blank-content-area-page.php:30
+msgid "Edit %s"
+msgstr ""
+
+#: templates/full-width-page.php:3
+msgid "Full Width Page"
+msgstr ""
+
+#: templates/grid-page.php:3
+msgid "Parent page + child page(s)"
+msgstr ""
+
+#: inc/plugins/woocommerce.php:213
+msgid "Clear"
+msgstr ""
+
+#: inc/plugins/woocommerce.php:223
+msgid "Edit"
+msgstr ""
+
+#: inc/plugins/woocommerce.php:274
+msgid "View your shopping cart"
+msgstr ""
+
+#: inc/typography/class-themes-harbor-customizer-font-family-control.php:44
+msgid "Reset to default"
+msgstr ""
+
+#: inc/typography/class-themes-harbor-customizer-font-family-control.php:45
+msgid "System fonts"
+msgstr ""
+
+#: inc/typography/class-themes-harbor-customizer-font-family-control.php:46
+msgid "Google fonts"
+msgstr ""
+
+#: inc/typography/customizer.php:30
+msgid "Typography Options"
+msgstr ""
+
+#: inc/typography/customizer.php:33
+msgid "Select System Stack option if your site uses a custom font to avoid loading unused fonts."
+msgstr ""
+
+#: inc/typography/customizer.php:52
+msgid "Body Font Family"
+msgstr ""
+
+#: inc/typography/customizer.php:55
+msgid "Select the body font family which will be used for text in the body of your website."
+msgstr ""
+
+#: inc/typography/customizer.php:75
+msgid "Headings Font Family"
+msgstr ""
+
+#: inc/typography/customizer.php:78
+msgid "Select the font family which will be used for the headings on your website."
+msgstr ""
+
+#: inc/updater/theme-updater.php:37
+msgid "Error"
+msgstr ""
+
+#: inc/updater/theme-updater.php:40
+msgid "You have the latest version"
+msgstr ""
+
+#: inc/updater/theme-updater.php:41
+msgid "You have an outdated version"
+msgstr ""
+
+#. translators: 1: Theme name, 2: Theme version, 3: URL, 4: URL, 5: URL, 6: Optional attributes.
+#: inc/updater/theme-updater.php:43
+msgid "<strong>%1$s %2$s</strong> is available. <a href=\"%3$s\" class=\"thickbox\" title=\"%4$s\">Check out what's new</a> or <a href=\"%5$s\"%6$s>update now</a>."
+msgstr ""
+
+#. translators: 1: Theme name, 2: Theme version, 3: URL, 4: URL, 5: URL.
+#: inc/updater/theme-updater.php:45
+msgid "<strong>%1$s %2$s</strong> is available. <a href=\"%3$s\" class=\"thickbox\" title=\"%4$s\">Check out what's new</a>. Note, the theme must be <a href=\"%5$s\">activated with a valid theme license key</a> in order to receive updates."
+msgstr ""
+
+#. translators: 1: Date
+#: inc/updater/theme-updater.php:47
+msgid "It expires on %s."
+msgstr ""
+
+#. translators: 1: Number of sites activated, 2: Total sites allowed
+#: inc/updater/theme-updater.php:49
+msgid "You have %1$s / %2$s sites activated."
+msgstr ""
+
+#: inc/updater/theme-updater.php:50
+msgid "License keys do not match."
+msgstr ""
+
+#: inc/updater/theme-updater.php:51
+msgid "Your license is not active for this URL."
+msgstr ""
+
+#: inc/updater/theme-updater.php:52
+msgid "Your license key is disabled."
+msgstr ""
+
+#: inc/updater/theme-updater.php:53
+msgid "Your license key is inactive."
+msgstr ""
+
+#: inc/updater/theme-updater.php:54
+msgid "Your license key is active."
+msgstr ""
+
+#: inc/updater/theme-updater.php:55
+msgid "Your license key has been disabled."
+msgstr ""
+
+#: inc/updater/theme-updater.php:56
+msgid "Invalid license."
+msgstr ""
+
+#: inc/updater/theme-updater.php:57, inc/updater/theme-updater.php:58
+msgid "License status is unknown."
+msgstr ""
+
+#: inc/updater/theme-updater.php:59
+msgid "Updating this theme will lose any customizations you have made. 'Cancel' to stop, 'OK' to update."
+msgstr ""
+
+#. translators: 1: Date
+#: inc/updater/theme-updater.php:61
+msgid "Your license key expired on %s."
+msgstr ""
+
+#: inc/updater/theme-updater.php:62
+msgid "Your license key has expired."
+msgstr ""
+
+#: inc/updater/theme-updater.php:63
+msgid "Lifetime License."
+msgstr ""
+
+#: inc/updater/theme-updater.php:64
+msgid "This documentation file feed seems to be temporarily down. You can always view it on Themes Harbor in the meantime."
+msgstr ""
+
+#: inc/updater/theme-updater.php:65
+msgid "There seems to be a temporary problem retrieving the latest updates for this theme."
+msgstr ""
+
+#: inc/updater/theme-updater.php:66
+msgid "unlimited"
+msgstr ""
+
+#: inc/updater/theme-updater.php:67
+msgid "An error occurred, please try again."
+msgstr ""
+
+#: inc/updater/theme-updater.php:68
+msgid "Your license key has reached its activation limit."
+msgstr ""
+
+#. translators: 1: Theme name
+#: inc/updater/theme-updater.php:70
+msgid "This appears to be an invalid license key for %s."
+msgstr ""
+
+#: inc/updater/theme-updater.php:73
+msgid "Locate a license key"
+msgstr ""
+
+#: inc/updater/theme-updater.php:74
+msgid "Activate license key"
+msgstr ""
+
+#: inc/updater/theme-updater.php:75
+msgid "Save license key"
+msgstr ""
+
+#: inc/updater/theme-updater.php:76
+msgid "Deactivate license key"
+msgstr ""
+
+#: inc/updater/theme-updater.php:77
+msgid "Clear license key"
+msgstr ""
+
+#: inc/updater/theme-updater.php:78
+msgid "Dismiss this notice"
+msgstr ""
+
+#: inc/updater/theme-updater.php:79
+msgid "Renew?"
+msgstr ""
+
+#: inc/updater/theme-updater.php:80
+msgid "Start here"
+msgstr ""
+
+#: inc/updater/theme-updater.php:81
+msgid "Open documentation"
+msgstr ""
+
+#: inc/updater/theme-updater.php:82
+msgid "Open changelogs"
+msgstr ""
+
+#: inc/updater/theme-updater.php:83
+msgid "Ask a question"
+msgstr ""
+
+#: inc/updater/theme-updater.php:84
+msgid "Read support policy"
+msgstr ""
+
+#: inc/updater/theme-updater.php:85
+msgid "Subscribe to our newsletter"
+msgstr ""
+
+#: inc/updater/theme-updater.php:88
+msgid "License key form"
+msgstr ""
+
+#: inc/updater/theme-updater.php:89
+msgid "Theme Info"
+msgstr ""
+
+#. translators: 1: Version number
+#: inc/updater/theme-updater.php:91
+msgid "Version: %s"
+msgstr ""
+
+#: inc/updater/theme-updater.php:92
+msgid "Documentation"
+msgstr ""
+
+#: inc/updater/theme-updater.php:93
+msgid "Changelog"
+msgstr ""
+
+#: inc/updater/theme-updater.php:94
+msgid "Enter your theme license key and save it."
+msgstr ""
+
+#: inc/updater/theme-updater.php:95
+msgid "License key"
+msgstr ""
+
+#: inc/updater/theme-updater.php:96
+msgid "Support"
+msgstr ""
+
+#: inc/updater/theme-updater.php:97
+msgid "Newsletter"
+msgstr ""
+
+#: inc/updater/theme-updater.php:100
+msgid "Our efforts go into making installation as easy as possible for you. Click the button below to open a step by step guide on how to set up your current theme."
+msgstr ""
+
+#: inc/updater/theme-updater.php:101
+msgid "Our themes are compatible with the latest WordPress version and we perform tests and updates on a regular basis to keep them safe and stable."
+msgstr ""
+
+#: inc/updater/theme-updater.php:102
+msgid "Still cannot find your answer in documentation? Our support team is always available to answer any questions you may have."
+msgstr ""
+
+#: inc/updater/theme-updater.php:103
+msgid "Subscribe to our newsletter to be the first to know about the latest updates, educational guides and exclusive offers at Themes Harbor."
+msgstr ""
+
+#: template-parts/global/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/global/content-none.php:29
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: template-parts/global/content-none.php:24
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: template-parts/global/content-none.php:20
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/global/page-header.php:26
+msgid "Search Results for: %s"
+msgstr ""
+
+#: template-parts/global/site-search-form.php:13
+msgid "Search for:"
+msgstr ""
+
+#: template-parts/global/site-search-form.php:14
+msgid "Search &#x2026;"
+msgstr ""
+
+#: template-parts/global/site-search-form.php:26, template-parts/global/site-toggle-sidebar.php:16
+msgid "Close"
+msgstr ""
+
+#: template-parts/global/site-toggle-sidebar.php:20
+msgid "Mobile menu"
+msgstr ""
+
+#. translators: %s: Name of current post.
+#: template-parts/hfeed/content.php:50
+msgid "Continue reading %s"
+msgstr ""
+
+#: template-parts/singular/page-header.php:49
+msgid "Skip to entry content"
+msgstr ""

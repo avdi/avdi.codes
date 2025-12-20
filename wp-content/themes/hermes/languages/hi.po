@@ -1,0 +1,339 @@
+# Translation of WordPress.com - Themes - Hermes in Hindi
+# This file is distributed under the same license as the WordPress.com - Themes - Hermes package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2016-06-22 15:26:55+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.1.0-alpha\n"
+"Language: hi_IN\n"
+"Project-Id-Version: WordPress.com - Themes - Hermes\n"
+
+#: content.php:29
+msgid "%"
+msgstr "%"
+
+#: content.php:29
+msgid "1"
+msgstr "1"
+
+#: content.php:29
+msgid "0"
+msgstr "0"
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/premium/hermes/templates/full-width-page.php
+msgid "Full Width Page"
+msgstr "पूर्ण चौड़ाई पृष्ठ"
+
+#. Description of the plugin/theme
+#: wp-content/themes/premium/hermes/style.css
+msgid "Modern and minimalistic theme with a clean design."
+msgstr "आधुनिक और न्यूनतम थीम के साथ एक स्वच्छ डिजाइन है।"
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr "%s के लिए खोज परिणाम:"
+
+#: parts/single-page-header.php:19 parts/single-post-header.php:24
+msgid "Skip to entry content"
+msgstr "प्रविष्टि सामग्री पर जाएं"
+
+#: parts/author-section.php:18
+msgid "Written by %s"
+msgstr "%s द्वारा लिखित"
+
+#: inc/template-tags.php:213
+msgid "Archives"
+msgstr "पुरालेख"
+
+#. translators: 1: Taxonomy singular name, 2: Current taxonomy term
+#: inc/template-tags.php:211
+msgid "%1$s: %2$s"
+msgstr "%1$s: %2$s"
+
+#: inc/template-tags.php:207
+msgid "Archives: %s"
+msgstr "पुरालेख: %s"
+
+#: inc/template-tags.php:205
+msgctxt "post format archive title"
+msgid "Chats"
+msgstr "चैट्स"
+
+#: inc/template-tags.php:203
+msgctxt "post format archive title"
+msgid "Audio"
+msgstr "ऑडियो"
+
+#: inc/template-tags.php:201
+msgctxt "post format archive title"
+msgid "Statuses"
+msgstr "स्थितियां"
+
+#: inc/template-tags.php:199
+msgctxt "post format archive title"
+msgid "Links"
+msgstr "कड़ियाँ"
+
+#: inc/template-tags.php:197
+msgctxt "post format archive title"
+msgid "Quotes"
+msgstr "उद्धरण"
+
+#: inc/template-tags.php:195
+msgctxt "post format archive title"
+msgid "Videos"
+msgstr "वीडियोस"
+
+#: inc/template-tags.php:193
+msgctxt "post format archive title"
+msgid "Images"
+msgstr "छवियाँ"
+
+#: inc/template-tags.php:191
+msgctxt "post format archive title"
+msgid "Galleries"
+msgstr "गैलेरियां"
+
+#: inc/template-tags.php:187
+msgid "Day: %s"
+msgstr "दिन: %s"
+
+#: inc/template-tags.php:185
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: inc/template-tags.php:185
+msgid "Month: %s"
+msgstr "महीना: %s"
+
+#: inc/template-tags.php:183
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: inc/template-tags.php:183
+msgid "Year: %s"
+msgstr "वर्ष: %s"
+
+#: inc/template-tags.php:181
+msgid "Author: %s"
+msgstr "लेखक: %s"
+
+#: inc/template-tags.php:179
+msgid "Tag: %s"
+msgstr "टैग: %s"
+
+#: inc/template-tags.php:177
+msgid "Category: %s"
+msgstr "श्रेणी: %s"
+
+#: inc/template-tags.php:156
+msgid "Tagged with:"
+msgstr "के साथ टैग किया गया:"
+
+#: inc/template-tags.php:150
+msgid "This entry was posted in:"
+msgstr "यह प्रविष्टि इसमें पोस्ट किया गया:"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:148 inc/template-tags.php:154
+msgid ", "
+msgstr ", "
+
+#: inc/template-tags.php:132
+msgctxt "post author"
+msgid "%s"
+msgstr "%s"
+
+#: inc/template-tags.php:127
+msgctxt "post date"
+msgid "%s"
+msgstr "%s"
+
+#: inc/template-tags.php:100
+msgctxt "post author"
+msgid "by %s"
+msgstr "%s द्वारा"
+
+#: inc/template-tags.php:95
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr "%s पर पोस्ट किया गया"
+
+#: inc/template-tags.php:67 single.php:23
+msgid "Next Post"
+msgstr "अगला पोस्ट"
+
+#: inc/template-tags.php:61 single.php:24
+msgid "Previous Post"
+msgstr "पिछले पोस्ट"
+
+#: inc/template-tags.php:56
+msgid "Post navigation"
+msgstr "पोस्ट नेविगेशन"
+
+#: inc/template-tags.php:31
+msgid "Newer posts"
+msgstr "नए पोस्टस"
+
+#: inc/template-tags.php:27
+msgid "Older posts"
+msgstr "पुराने पोस्टस "
+
+#: inc/template-tags.php:23
+msgid "Posts navigation"
+msgstr "पोस्टस नेविगेशन"
+
+#: inc/extras.php:99
+msgid "Pages:"
+msgstr "पृष्ठ:"
+
+#: inc/customizer.php:36
+msgid "Left"
+msgstr "बांया"
+
+#: inc/customizer.php:35
+msgid "Right"
+msgstr "दांया"
+
+#: inc/customizer.php:31
+msgid "Sidebar Position"
+msgstr "साइडबार स्थिति"
+
+#: inc/customizer.php:20
+msgid "Theme"
+msgstr "थीम"
+
+#: header.php:68
+msgid "Search box"
+msgstr "खोज बॉक्स"
+
+#: header.php:62
+msgid "Menu"
+msgstr "मेनू "
+
+#: header.php:40
+msgid "Search"
+msgstr "खोजें"
+
+#: header.php:39
+msgid "Search &#x2026;"
+msgstr "खोजें &#x2026;"
+
+#: header.php:34
+msgid "Skip to content"
+msgstr "सामग्री पर जाएं"
+
+#: header.php:24 header.php:43
+msgid "Close"
+msgstr "बंद करें"
+
+#: functions.php:126
+msgctxt "PT Sans font: on or off"
+msgid "on"
+msgstr "on"
+
+#: functions.php:125
+msgctxt "PT Serif font: on or off"
+msgid "on"
+msgstr "on"
+
+#: functions.php:110
+msgid "Appears in the footer section of the site."
+msgstr "साइट के फूटर अनुभाग में दिखाई देता है।"
+
+#: functions.php:108
+msgid "Footer"
+msgstr "फुटर"
+
+#: functions.php:100
+msgid "Appears in the sidebar section of the site."
+msgstr "साइट की साइडबार अनुभाग में दिखाई देता है। "
+
+#: functions.php:98
+msgid "Sidebar"
+msgstr "साइडबार"
+
+#: functions.php:50
+msgid "Social Menu"
+msgstr "सामाजिक मेनू"
+
+#: functions.php:49
+msgid "Primary Menu"
+msgstr "प्राथमिक मेनू"
+
+#: footer.php:32
+msgid "Back to top"
+msgstr "वापस शीर्ष पर जाएं"
+
+#: footer.php:28
+msgid "Theme: %1$s by %2$s."
+msgstr "थीम: %2$s द्वारा %1$s।"
+
+#: footer.php:26
+msgid "Proudly powered by %s"
+msgstr "%s द्वारा गर्व के साथ संचालित"
+
+#: footer.php:26
+msgid "https://wordpress.org/"
+msgstr "https://wordpress.org/"
+
+#: content-page.php:16 inc/template-tags.php:160
+msgid "Edit"
+msgstr "सम्पादन"
+
+#: content-none.php:29
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "ऐसा लगता है आप जो देख रहे हैं हमें नहीं मिल रहा है। शायद खोज मदद कर सकता है।"
+
+#: content-none.php:24
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "क्षमा करें, लेकिन कुछ भी आपके खोज शब्दों से मेल नहीं खाते। कृपया कुछ अलग खोजशब्दों के साथ फिर से प्रयास करें।"
+
+#: content-none.php:20
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "अपनी पहली पोस्ट को प्रकाशित करने के लिए तैयार हैं? <a href=\"%1$s\">यहाँ से शुरुआत करें</a>।"
+
+#: content-none.php:14
+msgid "Nothing Found"
+msgstr "कुछ नहीं मिला"
+
+#: comments.php:62
+msgid "Comments are closed."
+msgstr "टिप्पणियाँ बंद कर दी गयी है."
+
+#: comments.php:37 comments.php:55
+msgid "Newer Comments"
+msgstr "नई टिप्पणियाँ"
+
+#: comments.php:36 comments.php:54
+msgid "Older Comments"
+msgstr "पुरानी टिप्पणियाँ"
+
+#: comments.php:35 comments.php:53
+msgid "Comment navigation"
+msgstr "टिप्पणी नेविगेशन"
+
+#: comments.php:27
+msgctxt "comments title"
+msgid "1 comment"
+msgid_plural "%1$s comments"
+msgstr[0] "1 टिप्पणी"
+msgstr[1] "%1$s टिप्पणियाँ"
+
+#: 404.php:21
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr "ऐसा लगता है कि कुछ भी इस स्थान पर नहीं पाया गया है। शायद एक खोज की कोशिश करें?"
+
+#: 404.php:19
+msgid "404"
+msgstr "404"
+
+#: 404.php:15
+msgid "Oops! That page can't be found."
+msgstr "उफ़! वह पृष्ठ नहीं पाया जा सका है।"

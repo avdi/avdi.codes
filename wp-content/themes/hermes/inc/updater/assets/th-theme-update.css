@@ -1,0 +1,17 @@
+/*--------------------------------------------------------------
+General
+--------------------------------------------------------------*/
+.themesharbor-update #TB_ajaxContent {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0;
+}
+
+.themesharbor-update #TB_ajaxContent .inner {
+    margin-bottom: 20px;
+    padding: 20px 40px;
+}
+
+.themesharbor-update #TB_ajaxContent .inner p > strong {
+    background-color: #fff8e5;
+}

@@ -1,0 +1,196 @@
+/*purgecss start ignore
+ */
+
+/**
+ *	Jetpack styles.
+ */
+
+/*--------------------------------------------------------------
+# Singular
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Comments form
+--------------------------------------------------------------*/
+
+.jetpack_remote_comment, .akismet_comment_form_privacy_notice {
+    -webkit-margin-before: var(--wp--custom--spacing--small);
+    margin-block-start: var(--wp--custom--spacing--small);
+}
+
+/* Comments sections */
+
+#respond.js {
+    -webkit-padding-before: 0;
+    padding-block-start: 0;
+    padding-bottom: 0;
+    -webkit-margin-after: 0;
+    margin-block-end: 0;
+}
+
+#respond.js h3 {
+    -webkit-margin-before: 0;
+    margin-block-start: 0;
+    -webkit-margin-after: 1em;
+    margin-block-end: 1em;
+}
+
+.akismet_comment_form_privacy_notice {
+    font-size: var(--wp--preset--font-size--small);
+}
+
+/*--------------------------------------------------------------
+# Share Buttons, Tags, Categories and Related Posts
+--------------------------------------------------------------*/
+
+.site-main .sd-content .share-customize-link {
+    margin-top: var(--th-site-spacing-base);
+}
+
+.site-main .sd-content .share-customize-link a {
+    font-size: var(--th-font-size-xs);
+    font-family: var(--wp--preset--font-family--body-font);
+}
+
+/* Spacing between the share sections. */
+
+.sharedaddy {
+    margin-bottom: var(--th-site-spacing-lg);
+}
+
+.site-content .sharedaddy .sd-sharing {
+    margin-bottom: 0;
+}
+
+.site-content .sharedaddy > .sd-sharing + .sd-sharing {
+    margin-top: var(--th-site-spacing-lg);
+}
+
+.site-content .sharedaddy .sd-social.sd-sharing {
+    margin-bottom: -5px;
+}
+
+#page #jp-post-flair {
+    padding-top: 0;
+    margin-top: 35px;
+}
+
+#page #jp-post-flair > .sharedaddy,
+#page #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
+    margin-top: var(--th-site-spacing-base);
+}
+
+#page div.sharedaddy h3.sd-title,
+#page div#jp-relatedposts h3.jp-relatedposts-headline {
+    font-size: var(--th-font-size-2xs);
+    color: var(--wp--preset--color--secondary-base);
+    text-transform: uppercase;
+    letter-spacing: .5em;
+}
+
+#page div.sharedaddy .sd-content ul {
+    margin-bottom: 0 !important;
+}
+
+#page .sd-content .share-customize-link {
+    margin-top: var(--th-site-spacing-xs);
+}
+
+#page div.sharedaddy h3.sd-title {
+    margin-bottom: var(--th-site-spacing-base);
+    font-weight: 400;
+}
+
+#page div#jp-relatedposts h3.jp-relatedposts-headline em {
+    font-weight: 400;
+}
+
+#page div.sharedaddy h3.sd-title:before,
+#page div#jp-relatedposts h3.jp-relatedposts-headline em:before {
+    content: '';
+    border: none;
+    margin: 0;
+}
+
+#page #jp-relatedposts, #page #jp-relatedposts h3.jp-relatedposts-headline,
+#page #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post,
+#page .sd-content .share-customize-link {
+    margin-bottom: 0;
+}
+
+#page #jp-relatedposts .jp-relatedposts-post .jp-relatedposts-post-img {
+    margin-bottom: var(--th-site-spacing-sm);
+}
+
+#page #jp-relatedposts .jp-relatedposts-post .jp-relatedposts-post-img:hover {
+    opacity: var(--th-site-opacity-base);
+}
+
+#page div#jp-relatedposts .jp-relatedposts-post-title {
+    margin-bottom: var(--th-site-spacing-2xs);
+    font-family: var(--wp--preset--font-family--headings-font);
+    text-transform: uppercase;
+}
+
+#page div#jp-relatedposts .jp-relatedposts-post-title a {
+    text-decoration: none;
+    font-weight: bold;
+    color: inherit;
+}
+
+#page div#jp-relatedposts .jp-relatedposts-post-title a:hover,
+#page #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context,
+#page #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date {
+    color: var(--wp--preset--color--secondary-base);
+}
+
+#page #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post,
+#page #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context,
+#page #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date {
+    opacity: 1;
+}
+
+#jp-relatedposts .jp-relatedposts-items p,
+#jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
+    font-size: var(--th-font-size-sm);
+}
+
+@media only screen and (max-width:500px) {
+    #page div#jp-relatedposts div.jp-relatedposts-items .jp-relatedposts-post {
+        width: 100%;
+    }
+}
+
+.pd-rating {
+    line-height: 1;
+}
+
+/*--------------------------------------------------------------
+# Comments
+--------------------------------------------------------------*/
+
+.akismet_comment_form_privacy_notice {
+    font-size: var(--th-font-size-sm);
+}
+
+.comments-area #respond.js h3 {
+    margin-top: 0;
+    margin-bottom: var(--th-site-spacing-base);
+}
+
+.comments-area .comment-reply-title:not(.th-uppercase) {
+    font-size: var(--th-font-size-md);
+    text-transform: uppercase;
+}
+
+.comments-area #respond.js {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.jetpack_remote_comment {
+    margin-top: var(--th-site-spacing-base);
+}
+
+/*purgecss end ignore
+ */

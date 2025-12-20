@@ -1,0 +1,32 @@
+pre,
+.wp-block-code {
+  background-color: var(--wp--preset--color--secondary-light);
+  line-height: 1.6;
+  overflow: auto;
+  padding: 1.6em;
+}
+
+.wp-block-code,
+pre, code, kbd, samp {
+  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+pre,
+.wp-block-code,
+code, kbd, tt, var {
+  font-size: 0.9375rem;
+}
+
+code {
+  padding: 0.2em 0.3em;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+
+pre code {
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  color: inherit;
+}

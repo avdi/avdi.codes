@@ -1,0 +1,12 @@
+/*--------------------------------------------------------------
+# Pullquote: General
+--------------------------------------------------------------*/
+.wp-block-pullquote.is-style-solid-color blockquote {
+  max-width: 80%;
+}
+.wp-block-pullquote > blockquote {
+  border-inline: 0;
+}
+.wp-block-pullquote blockquote p, .wp-block-pullquote.alignleft blockquote p, .wp-block-pullquote.alignright blockquote p, .wp-block-pullquote.has-text-align-left blockquote p, .wp-block-pullquote.has-text-align-right blockquote p {
+  font-size: inherit;
+}

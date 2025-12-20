@@ -1,0 +1,205 @@
+/*purgecss start ignore
+ */
+
+/**
+ *	Jetpack styles.
+ */
+
+/*--------------------------------------------------------------
+# Hfeed
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Featured Content
+--------------------------------------------------------------*/
+
+.featured-content {
+    -webkit-box-shadow: inset 0 2px 0 2px var(--wp--preset--color--primary-base);
+            box-shadow: inset 0 2px 0 2px var(--wp--preset--color--primary-base);
+}
+
+.featured-content .has-post-thumbnail .featured-label,
+.featured-content > .has-post-thumbnail {
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .4);
+}
+
+.featured-content .has-post-thumbnail .featured-label a,
+.featured-content>.has-post-thumbnail {
+    color: var(--wp--preset--color--white);
+}
+
+.featured-content .more-link {
+    z-index: 2;
+}
+
+.featured-content .featured-label, .featured-content .primary-content .hentry,
+.featured-content .secondary-content {
+    position: relative;
+    z-index: 3;
+}
+
+.featured-content .primary-content:hover+.secondary-content,
+.featured-content .secondary-content .hentry:hover {
+    opacity: .75;
+}
+
+.featured-content .entry-title {
+    max-width: 95%;
+    font-size: var(--wp--preset--font-size--medium);
+}
+
+.featured-content .primary-content .entry-title {
+    font-size: var(--wp--preset--font-size--gigantic);
+}
+
+.featured-content a {
+    color: inherit;
+}
+
+.featured-content a:hover {
+    color: inherit;
+    opacity: .75;
+}
+
+.featured-content .featured-label svg {
+    margin-right: .25em;
+}
+
+.featured-content .hentry-overlay::after {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, transparent), color-stop(80%, rgba(0, 0, 0, .7)));
+    background: linear-gradient(180deg, transparent 0, rgba(0, 0, 0, .7) 80%);
+    -webkit-box-shadow: inset 0 2px 0 2px var(--wp--preset--color--primary-base);
+            box-shadow: inset 0 2px 0 2px var(--wp--preset--color--primary-base);
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+.featured-content .secondary-content .hentry {
+    -webkit-transition: all .15s ease-in-out;
+            transition: all .15s ease-in-out;
+}
+
+.featured-content .secondary-content>*+* {
+    border-top: 1px solid rgba(0, 0, 0, .15);
+    padding-top: .75rem;
+}
+
+.featured-content .secondary-content.has-post-thumbnail>*+* {
+    border-top-color: hsla(0, 0%, 100%, .2);
+}
+
+.featured-content .more-link:hover~.hentry-overlay,
+.featured-content .primary-content:hover~.hentry-overlay {
+    background-color: rgba(0, 0, 0, .8);
+    -webkit-transition: all .15s ease-in-out;
+            transition: all .15s ease-in-out;
+}
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+
+.infinite-scroll .posts-navigation,
+/* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll.neverending .site-footer {
+    /* Theme Footer (when set to scrolling) */
+    display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
+
+.infinity-end.neverending .site-footer {
+    display: block;
+}
+
+#infinite-footer {
+    z-index: 100;
+}
+
+#infinite-footer .container {
+    font-family: var(--wp--preset--font-family--headings-font);
+    padding: .3em .8em;
+    text-transform: uppercase;
+    background: var(--wp--preset--color--primary-base);
+}
+
+#infinite-footer #infinity-blog-title {
+    font-size: var(--wp--preset--font-size--normal);
+    color: var(--wp--preset--color--white);
+}
+
+#infinite-footer .blog-credits {
+    font-size: var(--wp--custom--typography--xs);
+    color: var(--wp--preset--color--secondary-light);
+}
+
+#infinite-footer .blog-credits a {
+    color: var(--wp--preset--color--secondary-light);
+}
+
+#infinite-footer #infinity-blog-title:hover,
+#infinite-footer .blog-credits a:hover {
+    color: var(--wp--preset--color--secondary-base);
+}
+
+.site #infinite-handle button, .site #infinite-handle button:hover {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.infinite-loader, #infinite-handle {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.infinite-loader .spinner, .site #infinite-handle button {
+    margin: auto;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.infinite-loader {
+    min-height: 62px;
+}
+
+.infinite-loader .spinner {
+    background-color: var(--wp--preset--color--white);
+    border-radius: var(--wp--custom--radius--base);
+    background-color: var(--wp--preset--color--secondary-light);
+}
+
+#infinite-handle .svg-icon {
+    margin-right: .5em;
+}
+
+#infinite-handle {
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    top: 2px;
+}
+
+#infinite-handle span {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, .12);
+    border: 1px solid transparent;
+    font-size: var(--wp--preset--font-size--small);
+    font-family: var(--wp--preset--font-family--headings-font);
+    color: var(--wp--preset--color--secondary-light);
+    font-weight: bold;
+}
+
+#infinite-handle span:hover {
+    border-color: var(--wp--preset--color--secondary-light);
+    background-color: transparent;
+}
+
+/*purgecss end ignore
+ */

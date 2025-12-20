@@ -1,0 +1,303 @@
+# Translation of WordPress.com - Themes - Hermes in Dutch
+# This file is distributed under the same license as the WordPress.com - Themes - Hermes package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2016-04-29 15:58:51+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.1.0-alpha\n"
+"Language: nl\n"
+"Project-Id-Version: WordPress.com - Themes - Hermes\n"
+
+#: content.php:29
+msgid "%"
+msgstr "%"
+
+#: content.php:29
+msgid "1"
+msgstr "1"
+
+#: content.php:29
+msgid "0"
+msgstr "0"
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/premium/hermes/templates/full-width-page.php
+msgid "Full Width Page"
+msgstr "Pagina in volledige breedte"
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr "Zoekresultaten voor: %s"
+
+#: parts/author-section.php:18
+msgid "Written by %s"
+msgstr "Geschreven door%s"
+
+#: inc/template-tags.php:213
+msgid "Archives"
+msgstr "Archieven"
+
+#. translators: 1: Taxonomy singular name, 2: Current taxonomy term
+#: inc/template-tags.php:211
+msgid "%1$s: %2$s"
+msgstr "%1$s: %2$s"
+
+#: inc/template-tags.php:207
+msgid "Archives: %s"
+msgstr "Archieven: %s"
+
+#: inc/template-tags.php:205
+msgctxt "post format archive title"
+msgid "Chats"
+msgstr "Gesprekken"
+
+#: inc/template-tags.php:203
+msgctxt "post format archive title"
+msgid "Audio"
+msgstr "Audio"
+
+#: inc/template-tags.php:201
+msgctxt "post format archive title"
+msgid "Statuses"
+msgstr "Statussen"
+
+#: inc/template-tags.php:199
+msgctxt "post format archive title"
+msgid "Links"
+msgstr "Links"
+
+#: inc/template-tags.php:197
+msgctxt "post format archive title"
+msgid "Quotes"
+msgstr "Citaten"
+
+#: inc/template-tags.php:195
+msgctxt "post format archive title"
+msgid "Videos"
+msgstr "Video's"
+
+#: inc/template-tags.php:193
+msgctxt "post format archive title"
+msgid "Images"
+msgstr "Afbeeldingen"
+
+#: inc/template-tags.php:191
+msgctxt "post format archive title"
+msgid "Galleries"
+msgstr "Galerijen"
+
+#: inc/template-tags.php:189
+msgctxt "post format archive title"
+msgid "Asides"
+msgstr "Zijdelings"
+
+#: inc/template-tags.php:187
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr "j F Y"
+
+#: inc/template-tags.php:187
+msgid "Day: %s"
+msgstr "Dag: %s"
+
+#: inc/template-tags.php:185
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: inc/template-tags.php:185
+msgid "Month: %s"
+msgstr "Maand: %s"
+
+#: inc/template-tags.php:183
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: inc/template-tags.php:183
+msgid "Year: %s"
+msgstr "Jaar: %s"
+
+#: inc/template-tags.php:181
+msgid "Author: %s"
+msgstr "Auteur: %s"
+
+#: inc/template-tags.php:179
+msgid "Tag: %s"
+msgstr "Tag: %s"
+
+#: inc/template-tags.php:177
+msgid "Category: %s"
+msgstr "Categorie: %s"
+
+#: inc/template-tags.php:156
+msgid "Tagged with:"
+msgstr "Met de volgende tags:"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:148 inc/template-tags.php:154
+msgid ", "
+msgstr ", "
+
+#: inc/template-tags.php:100
+msgctxt "post author"
+msgid "by %s"
+msgstr "door %s"
+
+#: inc/template-tags.php:95
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr "Geplaatst op %s"
+
+#: inc/template-tags.php:67 single.php:23
+msgid "Next Post"
+msgstr "Volgende bericht"
+
+#: inc/template-tags.php:61 single.php:24
+msgid "Previous Post"
+msgstr "Vorige bericht"
+
+#: inc/template-tags.php:56
+msgid "Post navigation"
+msgstr "Berichtnavigatie"
+
+#: inc/template-tags.php:31
+msgid "Newer posts"
+msgstr "Nieuwere berichten"
+
+#: inc/template-tags.php:27
+msgid "Older posts"
+msgstr "Oudere berichten"
+
+#: inc/template-tags.php:23
+msgid "Posts navigation"
+msgstr "Berichtennavigatie"
+
+#: inc/extras.php:99
+msgid "Pages:"
+msgstr "Pagina&#39;s:"
+
+#: inc/customizer.php:36
+msgid "Left"
+msgstr "Links"
+
+#: inc/customizer.php:35
+msgid "Right"
+msgstr "Rechts"
+
+#: inc/customizer.php:31
+msgid "Sidebar Position"
+msgstr "Sidebar positie"
+
+#: inc/customizer.php:20
+msgid "Theme"
+msgstr "Thema"
+
+#: header.php:62
+msgid "Menu"
+msgstr "Menu"
+
+#: header.php:40
+msgid "Search"
+msgstr "Zoeken"
+
+#: header.php:34
+msgid "Skip to content"
+msgstr "Spring naar inhoud"
+
+#: header.php:24 header.php:43
+msgid "Close"
+msgstr "Sluiten"
+
+#: functions.php:126
+msgctxt "PT Sans font: on or off"
+msgid "on"
+msgstr "op"
+
+#: functions.php:125
+msgctxt "PT Serif font: on or off"
+msgid "on"
+msgstr "on"
+
+#: functions.php:110
+msgid "Appears in the footer section of the site."
+msgstr "Verschijnt in het footer gedeelte van de site."
+
+#: functions.php:108
+msgid "Footer"
+msgstr "Voettekst"
+
+#: functions.php:98
+msgid "Sidebar"
+msgstr "Sidebar"
+
+#: functions.php:50
+msgid "Social Menu"
+msgstr "Social-menu"
+
+#: functions.php:49
+msgid "Primary Menu"
+msgstr "Primair menu"
+
+#: footer.php:32
+msgid "Back to top"
+msgstr "Terug naar boven"
+
+#: footer.php:28
+msgid "Theme: %1$s by %2$s."
+msgstr "Thema: %1$s door %2$s."
+
+#: footer.php:26
+msgid "Proudly powered by %s"
+msgstr "Met trots ondersteund door %s"
+
+#: footer.php:26
+msgid "https://wordpress.org/"
+msgstr "https://nl.wordpress.org/"
+
+#: content-page.php:16 inc/template-tags.php:160
+msgid "Edit"
+msgstr "Bewerken"
+
+#: content-none.php:29
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Het lijkt erop dat we niet kunnen vinden wat je zoekt. Misschien kan zoeken helpen."
+
+#: content-none.php:24
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Sorry, maar niets kwam overeen met je zoektermen. Gelieve het opnieuw te proberen met een aantal andere trefwoorden."
+
+#: content-none.php:20
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Klaar om je eerste bericht te publiceren? <a href=\"%1$s\">Begin hier</a>."
+
+#: content-none.php:14
+msgid "Nothing Found"
+msgstr "Niets gevonden"
+
+#: comments.php:62
+msgid "Comments are closed."
+msgstr "Reacties zijn gesloten."
+
+#: comments.php:37 comments.php:55
+msgid "Newer Comments"
+msgstr "Nieuwere reacties"
+
+#: comments.php:36 comments.php:54
+msgid "Older Comments"
+msgstr "Oudere reacties"
+
+#: comments.php:35 comments.php:53
+msgid "Comment navigation"
+msgstr "Reactienavigatie"
+
+#: 404.php:21
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr "Het lijkt erop dat er niets werd gevonden op deze locatie. Misschien een zoekopdracht  proberen?"
+
+#: 404.php:19
+msgid "404"
+msgstr "404"

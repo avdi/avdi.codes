@@ -1,0 +1,10 @@
+.mc4wp-form {
+  width: 100%;
+}
+.mc4wp-form .mc4wp-form-fields > :last-child {
+  margin-block-end: 0;
+}
+
+.wp-block-column .mc4wp-form input[type=email], .wp-block-column .mc4wp-form input[type=text] {
+  width: 100%;
+}

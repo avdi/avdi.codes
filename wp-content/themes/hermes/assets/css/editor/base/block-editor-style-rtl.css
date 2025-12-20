@@ -1,0 +1,180 @@
+/*purgecss start ignore
+ */
+
+/*!
+ * Used to style the Block editor.
+ */
+
+body {
+    --wp--custom--spacing--baseline: 2.5rem;
+    --wp--custom--spacing--input-button: 1.25em;
+    --wp--custom--font-weight--baseline: 400;
+}
+
+@media (min-width: 500px) {
+    body {
+        --wp--custom--typography--scale: 1.225;
+        --wp--custom--spacing--baseline: 4rem;
+        --wp--custom--typography--xs: calc(var(--wp--custom--typography--sm)/var(--wp--custom--typography--scale)*1.125);
+    }
+}
+
+/* Block editor: editor-specific styles */
+
+.edit-post-visual-editor__post-title-wrapper > .wp-block-post-title {
+    font-size: 1.25em;
+}
+
+.edit-post-visual-editor__post-title-wrapper > .wp-block-post-title:not(.is-selected) {
+    opacity: .75;
+}
+
+.editor-styles-wrapper > .is-root-container,
+.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
+    -webkit-padding-start: var(--wp--custom--spacing--medium);
+    padding-inline-start: var(--wp--custom--spacing--medium);
+    -webkit-padding-end: var(--wp--custom--spacing--medium);
+    padding-inline-end: var(--wp--custom--spacing--medium);
+}
+
+.editor-styles-wrapper .block-editor-block-list__layout.is-root-container .wp-block[data-align="full"],
+.editor-styles-wrapper .block-editor-block-list__layout.is-root-container .alignfull {
+    width: auto;
+    -webkit-margin-start: calc(var(--wp--custom--spacing--medium)*-1) !important;
+    margin-inline-start: calc(var(--wp--custom--spacing--medium)*-1) !important;
+    -webkit-margin-end: calc(var(--wp--custom--spacing--medium)*-1) !important;
+    margin-inline-end: calc(var(--wp--custom--spacing--medium)*-1) !important;
+}
+
+/* better spacing between heading and paragraph elements. */
+
+.editor-styles-wrapper :is(h1,h2,h3,h4,h5,h6) + p {
+    -webkit-margin-before: 0;
+    margin-block-start: 0;
+}
+
+/* Heading: with links */
+
+.editor-styles-wrapper :is(h1, h2, h3, h4, h5, h6) > a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.editor-styles-wrapper :is(h1, h2, h3, h4, h5, h6) > a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: .05em;
+    text-underline-offset: .05em;
+}
+
+.editor-styles-wrapper :is(h1, h2, h3, h4, h5, h6).has-text-color > a:hover {
+    color: inherit;
+    opacity: .75;
+}
+
+/* Lists */
+
+.editor-styles-wrapper ol ul, .editor-styles-wrapper ol ol,
+.editor-styles-wrapper ul ul, .editor-styles-wrapper ul ol {
+    margin-block: .125em;
+}
+
+/* Query */
+
+.editor-styles-wrapper .wp-block-query .wp-block-post-template + .wp-block-query-pagination {
+    -webkit-margin-before: var(--wp--style--block-gap);
+    margin-block-start: var(--wp--style--block-gap);
+}
+
+/* Quote */
+
+.wp-block-quote > :first-child {
+    -webkit-margin-before: 0;
+    margin-block-start: 0;
+}
+
+.wp-block-quote > :last-child {
+    -webkit-margin-after: 0;
+    margin-block-end: 0;
+}
+
+/* Widget area */
+
+.blocks-widgets-container .wp-block-widget-area__inner-blocks.editor-styles-wrapper>.block-editor-block-list__layout {
+    -webkit-margin-before: 0;
+    margin-block-start: 0;
+    padding: var(--wp--style--block-gap) var(--wp--custom--spacing--medium);
+}
+
+.blocks-widgets-container .wp-block-widget-area__inner-blocks.editor-styles-wrapper>.block-editor-block-list__layout > * + * {
+    -webkit-margin-before: var(--wp--style--block-gap);
+    margin-block-start: var(--wp--style--block-gap);
+}
+
+.wp-block[data-type="core/widget-area"] {
+    max-width: var(--wp--style--global--wide-size);
+}
+
+.wp-block[data-type="core/widget-area"] .wp-block-widget-area__inner-blocks.editor-styles-wrapper {
+    margin-inline: auto;
+}
+
+/* Fix extra spacing in widget area. */
+
+.wp-block-widget-area .wp-block div:not([class]) > :first-child {
+    -webkit-margin-before: 0;
+    margin-block-start: 0;
+}
+
+.wp-block-widget-area .wp-block div:not([class]) > :last-child {
+    -webkit-margin-after: 0;
+    margin-block-end: 0;
+}
+
+/* Widgets editor */
+
+.wp-block[data-type="core/widget-area"] [data-widget-area-id="sidebar-1"].wp-block-widget-area__inner-blocks.editor-styles-wrapper > .block-editor-block-list__layout .wp-block:not(.block-list-appender) .wp-block-archives-list,
+.wp-block[data-type="core/widget-area"] [data-widget-area-id="sidebar-1"].wp-block-widget-area__inner-blocks.editor-styles-wrapper > .block-editor-block-list__layout .wp-block:not(.block-list-appender) .wp-block-categories-list,
+.wp-block[data-type="core/widget-area"] [data-widget-area-id="sidebar-1"].wp-block-widget-area__inner-blocks.editor-styles-wrapper > .block-editor-block-list__layout .wp-block:not(.block-list-appender) .wp-block-categories__list,
+.wp-block[data-type="core/widget-area"] [data-widget-area-id="footer-1"].wp-block-widget-area__inner-blocks.editor-styles-wrapper > .block-editor-block-list__layout .wp-block:not(.block-list-appender) .wp-block-archives-list,
+.wp-block[data-type="core/widget-area"] [data-widget-area-id="footer-1"].wp-block-widget-area__inner-blocks.editor-styles-wrapper > .block-editor-block-list__layout .wp-block:not(.block-list-appender) .wp-block-categories-list,
+.wp-block[data-type="core/widget-area"] [data-widget-area-id="footer-1"].wp-block-widget-area__inner-blocks.editor-styles-wrapper > .block-editor-block-list__layout .wp-block:not(.block-list-appender) .wp-block-categories__list {
+    -webkit-padding-start: 1.25em;
+    padding-inline-start: 1.25em;
+}
+
+.wp-block[data-type="core/widget-area"] [data-widget-area-id="sidebar-1"].wp-block-widget-area__inner-blocks.editor-styles-wrapper > .block-editor-block-list__layout .wp-block:not(.block-list-appender) a:not(:hover),
+.wp-block[data-type="core/widget-area"] [data-widget-area-id="footer-1"].wp-block-widget-area__inner-blocks.editor-styles-wrapper > .block-editor-block-list__layout .wp-block:not(.block-list-appender) a:not(:hover) {
+    color: inherit;
+}
+
+.wp-block[data-type="core/widget-area"] {
+    /* sidebar */
+}
+
+.wp-block[data-type="core/widget-area"] [data-widget-area-id="sidebar-1"] {
+    max-width: calc(var(--wp--custom--spacing--medium) + var(--wp--custom--spacing--medium) + 305px);
+    font-size: var(--wp--preset--font-size--normal);
+}
+
+.wp-block[data-type="core/widget-area"] {
+    /* footer */
+}
+
+.wp-block[data-type="core/widget-area"] [data-widget-area-id="footer-1"] {
+    max-width: 100%;
+    font-family: var(--wp--preset--font-family--headings-font);
+}
+
+.wp-block[data-type="core/widget-area"] .wp-block-widget-group .widget-title {
+    font-size: var(--wp--preset--font-size--normal);
+    font-family: var(--wp--preset--font-family--headings-font);
+    text-transform: uppercase;
+    letter-spacing: var(--wp--custom--tracking--wider);
+}
+
+/* Block editor: default styles */
+
+/* Block editor: custom styles */
+
+/*purgecss end ignore
+ */

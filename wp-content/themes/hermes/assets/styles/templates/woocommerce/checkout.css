@@ -1,0 +1,176 @@
+/* Checkout page */
+.woocommerce .woocommerce-form-coupon {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+.woocommerce .woocommerce-form-coupon > * {
+  margin-block: 0;
+  max-width: 100%;
+  width: 100%;
+}
+.woocommerce .woocommerce-form-coupon .form-row-last {
+  max-width: 15rem;
+  margin-inline: 0;
+}
+.woocommerce .woocommerce-form-coupon .input-text {
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .woocommerce .woocommerce-form-coupon .form-row-first {
+    max-width: 40%;
+  }
+}
+.checkout.woocommerce-checkout > * + * {
+  margin-block-start: var(--wp--style--block-gap);
+}
+
+.checkout.woocommerce-checkout > * > * + * {
+  margin-block-start: var(--wp--style--block-gap);
+}
+
+.checkout.woocommerce-checkout h3 {
+  font-size: var(--wp--preset--font-size--medium);
+}
+
+.woocommerce-checkout .col2-set > * > * + * {
+  margin-block-start: var(--wp--style--block-gap);
+}
+
+.woocommerce-terms-and-conditions-wrapper {
+  font-size: var(--wp--preset--font-size--small);
+  color: var(--wp--preset--color--primary-light);
+  margin-block-start: 0;
+}
+.woocommerce-terms-and-conditions-wrapper .woocommerce-privacy-policy-text {
+  max-width: 55ch;
+}
+.woocommerce-terms-and-conditions-wrapper .woocommerce-privacy-policy-text > :first-child {
+  margin-block-start: 0;
+}
+
+.woocommerce-form__label-for-checkbox {
+  display: flex;
+  align-items: center;
+}
+.woocommerce-form__label-for-checkbox input + * {
+  margin-inline-start: 0.5em;
+}
+
+#ship-to-different-address {
+  font-size: 1em;
+  font-family: var(--wp--preset--font-family--body-font);
+  color: inherit;
+}
+
+.form-row.notes label {
+  display: block;
+  margin-block-end: 0.5em;
+}
+.form-row.notes label .optional {
+  color: var(--wp--preset--color--primary-light);
+}
+
+/* Login form */
+.woocommerce-form-login .form-row > * {
+  display: block;
+}
+.woocommerce-form-login .form-row .input-text {
+  width: 100%;
+}
+.woocommerce-form-login .clear + .form-row {
+  flex-wrap: nowrap;
+  flex-direction: column;
+  gap: 0.75em;
+}
+.woocommerce-form-login .clear + .form-row .woocommerce-form-login__submit {
+  order: 1;
+}
+.woocommerce-form-login .clear + .form-row .woocommerce-form-login__rememberme {
+  order: 2;
+}
+
+@media (min-width: 500px) {
+  .woocommerce-form-login .clear + .form-row {
+    flex-direction: row;
+  }
+  .woocommerce-form-login .clear + .form-row .woocommerce-form-login__rememberme {
+    align-self: end;
+    text-align: end;
+  }
+}
+@media (min-width: 768px) {
+  .woocommerce-form-login .form-row .input-text {
+    max-width: 30rem;
+  }
+}
+/* Checkout payment */
+.woocommerce-checkout-review-order > * {
+  margin-block-end: 0;
+}
+
+.woocommerce-checkout-review-order > * + *,
+.woocommerce-checkout-payment > * + * {
+  margin-block-start: var(--wp--style--block-gap);
+}
+
+@media (min-width: 768px) {
+  .woocommerce-checkout .woocommerce-checkout-payment .button {
+    width: auto;
+  }
+}
+/* Order summary */
+.woocommerce table.woocommerce-checkout-review-order-table th {
+  font-family: var(--wp--preset--font-family--headings-font);
+}
+
+.woocommerce table.woocommerce-checkout-review-order-table td {
+  vertical-align: middle;
+}
+
+.woocommerce-checkout-review-order-table .product-name {
+  font-weight: bolder;
+}
+
+.woocommerce-checkout-review-order-table .product-total,
+.woocommerce-checkout-review-order-table tfoot td {
+  text-align: end;
+}
+
+.woocommerce-order > * + * {
+  margin-block-start: var(--wp--style--block-gap);
+}
+.woocommerce-order > :first-child {
+  margin-block-start: 0;
+}
+.woocommerce-order > :last-child {
+  margin-block-end: 0;
+}
+.woocommerce-order address > :last-child {
+  margin-block-end: 0;
+}
+
+.woocommerce-form-login-toggle > :last-child {
+  margin-block-end: 0;
+}
+
+/* Order details */
+.woocommerce-table--order-details .wc-item-meta {
+  font-size: var(--wp--preset--font-size--small);
+  padding-inline-start: 1.25em;
+}
+.woocommerce-table--order-details .wc-item-meta p {
+  margin-block: 0.5em 0;
+}
+.woocommerce-table--order-details .wc-item-meta li + li {
+  margin-block-start: 0.5em;
+}
+.woocommerce-table--order-details .woocommerce-table__product-name > :last-child {
+  margin-block-end: 0;
+}
+
+/* Coupon form */
+.woocommerce-checkout .woocommerce-form-coupon .input-text {
+  margin-block-start: 0;
+}

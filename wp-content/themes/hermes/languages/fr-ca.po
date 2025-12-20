@@ -1,0 +1,311 @@
+# Translation of WordPress.com - Themes - Hermes in French (Canada)
+# This file is distributed under the same license as the WordPress.com - Themes - Hermes package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2016-07-23 11:02:48+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.1.0-beta.2\n"
+"Language: fr_CA\n"
+"Project-Id-Version: WordPress.com - Themes - Hermes\n"
+
+#: content.php:29
+msgid "%"
+msgstr "%"
+
+#: content.php:29
+msgid "1"
+msgstr "1"
+
+#: content.php:29
+msgid "0"
+msgstr "0"
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/premium/hermes/templates/full-width-page.php
+msgid "Full Width Page"
+msgstr "Page pleine largeur"
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr "Résultats de recherche pour : %s"
+
+#: parts/author-section.php:18
+msgid "Written by %s"
+msgstr "Rédigé par %s"
+
+#: inc/template-tags.php:213
+msgid "Archives"
+msgstr "Archives"
+
+#. translators: 1: Taxonomy singular name, 2: Current taxonomy term
+#: inc/template-tags.php:211
+msgid "%1$s: %2$s"
+msgstr "%1$s : %2$s"
+
+#: inc/template-tags.php:207
+msgid "Archives: %s"
+msgstr "Archives&nbsp;: %s"
+
+#: inc/template-tags.php:205
+msgctxt "post format archive title"
+msgid "Chats"
+msgstr "Clavardages"
+
+#: inc/template-tags.php:201
+msgctxt "post format archive title"
+msgid "Statuses"
+msgstr "Statuts"
+
+#: inc/template-tags.php:199
+msgctxt "post format archive title"
+msgid "Links"
+msgstr "Liens"
+
+#: inc/template-tags.php:197
+msgctxt "post format archive title"
+msgid "Quotes"
+msgstr "Citations"
+
+#: inc/template-tags.php:195
+msgctxt "post format archive title"
+msgid "Videos"
+msgstr "Vidéos"
+
+#: inc/template-tags.php:193
+msgctxt "post format archive title"
+msgid "Images"
+msgstr "Images"
+
+#: inc/template-tags.php:191
+msgctxt "post format archive title"
+msgid "Galleries"
+msgstr "Galeries"
+
+#: inc/template-tags.php:189
+msgctxt "post format archive title"
+msgid "Asides"
+msgstr "Apartés"
+
+#: inc/template-tags.php:187
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr "j F Y"
+
+#: inc/template-tags.php:187
+msgid "Day: %s"
+msgstr "Jour&nbsp;: %s"
+
+#: inc/template-tags.php:185
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: inc/template-tags.php:185
+msgid "Month: %s"
+msgstr "Mois&nbsp;: %s"
+
+#: inc/template-tags.php:183
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: inc/template-tags.php:183
+msgid "Year: %s"
+msgstr "Année&nbsp;: %s"
+
+#: inc/template-tags.php:181
+msgid "Author: %s"
+msgstr "Auteur : %s"
+
+#: inc/template-tags.php:179
+msgid "Tag: %s"
+msgstr "Mot-clé : %s"
+
+#: inc/template-tags.php:177
+msgid "Category: %s"
+msgstr "Catégorie : %s"
+
+#: inc/template-tags.php:156
+msgid "Tagged with:"
+msgstr "Marqué :"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:148 inc/template-tags.php:154
+msgid ", "
+msgstr ", "
+
+#: inc/template-tags.php:127
+msgctxt "post date"
+msgid "%s"
+msgstr "%s"
+
+#: inc/template-tags.php:100
+msgctxt "post author"
+msgid "by %s"
+msgstr "par %s"
+
+#: inc/template-tags.php:95
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr "Publié le %s"
+
+#: inc/template-tags.php:67 single.php:23
+msgid "Next Post"
+msgstr "Article suivant"
+
+#: inc/template-tags.php:61 single.php:24
+msgid "Previous Post"
+msgstr "Article précèdent"
+
+#: inc/template-tags.php:56
+msgid "Post navigation"
+msgstr "Navigation des articles"
+
+#: inc/template-tags.php:31
+msgid "Newer posts"
+msgstr "Articles Plus Récents"
+
+#: inc/template-tags.php:27
+msgid "Older posts"
+msgstr "Articles antérieurs"
+
+#: inc/template-tags.php:23
+msgid "Posts navigation"
+msgstr "Navigation des articles"
+
+#: inc/extras.php:99
+msgid "Pages:"
+msgstr "Pages :"
+
+#: inc/customizer.php:36
+msgid "Left"
+msgstr "Gauche"
+
+#: inc/customizer.php:35
+msgid "Right"
+msgstr "Droite"
+
+#: inc/customizer.php:31
+msgid "Sidebar Position"
+msgstr "Position de la Colonne latérale"
+
+#: inc/customizer.php:20
+msgid "Theme"
+msgstr "Thème"
+
+#: header.php:62
+msgid "Menu"
+msgstr "Menu"
+
+#: header.php:40
+msgid "Search"
+msgstr "Chercher"
+
+#: header.php:34
+msgid "Skip to content"
+msgstr "Aller au contenu principal"
+
+#: header.php:24 header.php:43
+msgid "Close"
+msgstr "Fermer"
+
+#: functions.php:126
+msgctxt "PT Sans font: on or off"
+msgid "on"
+msgstr "activée"
+
+#: functions.php:125
+msgctxt "PT Serif font: on or off"
+msgid "on"
+msgstr "activée"
+
+#: functions.php:110
+msgid "Appears in the footer section of the site."
+msgstr "Apparaît dans le pied de page du site."
+
+#: functions.php:108
+msgid "Footer"
+msgstr "Pied de page"
+
+#: functions.php:100
+msgid "Appears in the sidebar section of the site."
+msgstr "S'affiche dans la colonne latérale de votre site."
+
+#: functions.php:98
+msgid "Sidebar"
+msgstr "Colonne latérale"
+
+#: functions.php:50
+msgid "Social Menu"
+msgstr "Menu de réseaux sociaux"
+
+#: functions.php:49
+msgid "Primary Menu"
+msgstr "Menu principal"
+
+#: footer.php:32
+msgid "Back to top"
+msgstr "Revenir en haut"
+
+#: footer.php:28
+msgid "Theme: %1$s by %2$s."
+msgstr "Thème %1$s par %2$s."
+
+#: footer.php:26
+msgid "Proudly powered by %s"
+msgstr "Fièrement propulsé par %s"
+
+#: footer.php:26
+msgid "https://wordpress.org/"
+msgstr "http://fr.wordpress.org/"
+
+#: content-page.php:16 inc/template-tags.php:160
+msgid "Edit"
+msgstr "Modifier"
+
+#: content-none.php:29
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Le contenu demandé n&rsquo;a pu être trouvé. Pourquoi ne pas lancer une recherche? "
+
+#: content-none.php:24
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Désolé, mais rien ne correspond à vos critères. Réessayez en modifiant les termes de recherche."
+
+#: content-none.php:20
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Vous êtes prêt à publier votre premier article? <a href=\"%1$s\">Commencez ici</a>."
+
+#: content-none.php:14
+msgid "Nothing Found"
+msgstr "Inaccessible"
+
+#: comments.php:62
+msgid "Comments are closed."
+msgstr "Les commentaires sont fermés."
+
+#: comments.php:37 comments.php:55
+msgid "Newer Comments"
+msgstr "Commentaires ultérieurs"
+
+#: comments.php:36 comments.php:54
+msgid "Older Comments"
+msgstr "Commentaires antérieurs"
+
+#: comments.php:35 comments.php:53
+msgid "Comment navigation"
+msgstr "Navigation des commentaires"
+
+#: 404.php:21
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr "Aucun contenu n&rsquo; a été trouvé à l&rsquo;adresse demandée. Pourquoi ne pas essayer une recherche? "
+
+#: 404.php:19
+msgid "404"
+msgstr "404"
+
+#: 404.php:15
+msgid "Oops! That page can't be found."
+msgstr "Désolé! Cette page n'a pas été trouvée."

@@ -1,0 +1,6 @@
+/* Dropcap */
+p.has-drop-cap:not(:focus):first-letter {
+  font-size: 6.2em;
+  font-weight: bold;
+  line-height: 0.8;
+}

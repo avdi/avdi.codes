@@ -1,0 +1,26 @@
+/* Widgets: Calendar */
+.wp-block-calendar table {
+  margin-block-end: var(--wp--style--block-gap);
+}
+.wp-block-calendar table th {
+  text-align: center;
+  background-color: var(--wp--preset--color--secondary-light);
+  padding-block-start: 0.4em;
+  padding-block-end: 0.4em;
+  border: 1px solid var(--wp--preset--color--secondary-base);
+}
+.wp-block-calendar table tbody {
+  color: var(--wp--preset--color--primary-light);
+}
+.wp-block-calendar table tbody td {
+  border-color: var(--wp--preset--color--secondary-base);
+}
+.wp-block-calendar table caption {
+  color: var(--wp--preset--color--primary-light);
+  font-weight: bold;
+  margin-block-end: var(--wp--style--block-gap);
+}
+.wp-block-calendar .wp-calendar-nav {
+  font-size: var(--wp--preset--font-size--small);
+  font-weight: bold;
+}

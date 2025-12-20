@@ -1,0 +1,33 @@
+/*purgecss start ignore
+ */
+
+/*!
+ * Description: Used to style Jetpack blocks in the editor.
+ */
+
+/* Jetpack block styles - Frontend */
+
+/* Subscription widget */
+
+.jetpack_subscription_widget .wp-block-jetpack-subscriptions__container .screen-reader-text + input {
+    -webkit-margin-before: 0;
+    margin-block-start: 0;
+}
+
+/* Social icons */
+
+.jetpack_widget_social_icons ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    grid-gap: .75em;
+}
+
+.jetpack_widget_social_icons ul .jetpack-social-widget-item:hover {
+    opacity: .75;
+}
+
+/*purgecss end ignore
+ */
