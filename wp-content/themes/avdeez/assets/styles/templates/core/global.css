@@ -14,6 +14,10 @@
   overflow: hidden;
 }
 
+.fullscreen-header.wp-block-cover {
+  min-height: 100vh;
+}
+
 .wp-block-cover__image-background,
 .wp-block-cover__video-background {
   position: absolute;
