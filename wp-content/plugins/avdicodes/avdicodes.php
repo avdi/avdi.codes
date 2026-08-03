@@ -7,24 +7,59 @@ Author: Avdi Grimm
 Author URI: https://avdi.codes
 */
 
+// The post formats that carry short fediverse posts rather than articles.
+// Shared by the front page and the articles feed so the two cannot drift apart.
+function avdicodes_short_form_post_formats() {
+    return array(
+        'post-format-aside',
+        'post-format-link',
+        'post-format-image',
+        'post-format-quote',
+        'post-format-status'
+    );
+}
+
+// An articles-only feed at /feed/articles/, for readers and syndicators that
+// want the writing without the short posts.
+//
+// This has to be its own feed. The filter below cannot be extended to cover
+// the main feed, because WordPress sets is_home only when is_feed is false --
+// see parse_query() -- so /feed/ is out of its reach by design. Nor can a feed
+// URL express it: post format archives exist for aside, link, image, quote and
+// status, but "standard" is the absence of a term and has no archive.
+add_action('init', 'avdicodes_register_articles_feed');
+function avdicodes_register_articles_feed() {
+    add_feed('articles', 'avdicodes_render_articles_feed');
+}
+
+function avdicodes_render_articles_feed() {
+    do_feed_rss2(false);
+}
+
+// So feed readers discover it rather than having to be told.
+add_action('wp_head', 'avdicodes_articles_feed_link');
+function avdicodes_articles_feed_link() {
+    printf(
+        '<link rel="alternate" type="%s" title="%s" href="%s" />' . "\n",
+        esc_attr(feed_content_type('rss2')),
+        esc_attr(get_bloginfo('name') . ' &raquo; Articles Feed'),
+        esc_url(get_feed_link('articles'))
+    );
+}
+
 add_action('pre_get_posts', 'avdicodes_exclude_format_posts');
 function avdicodes_exclude_format_posts($query) {
-    // Only apply to main query, not in admin, AND only on the blog front page
-    if (!is_admin() && $query->is_main_query() && is_home()) {
+    // Only apply to main query, not in admin, and only on the blog front page
+    // or in the articles feed -- the two places that promise articles only.
+    if (!is_admin() && $query->is_main_query() && (is_home() || $query->is_feed('articles'))) {
         // Get existing tax queries if any
         $tax_queries = $query->get('tax_query') ? $query->get('tax_query') : array();
-        
+
         // Add our new tax query to exclude multiple post formats
         $tax_queries[] = array(
             'taxonomy' => 'post_format',
             'field' => 'slug',
-            'terms' => array(
-                'post-format-aside',
-                'post-format-link',
-                'post-format-image',
-                'post-format-quote',
-                'post-format-status'
-            ),
+            'terms' => avdicodes_short_form_post_formats(),
             'operator' => 'NOT IN'
         );
 
