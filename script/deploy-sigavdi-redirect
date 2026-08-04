@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+# Install the sigavdi.email redirect into the deployed .htaccess.
+#
+#   DEPLOY_HOST=… DEPLOY_ROOT=… script/deploy-sigavdi-redirect
+#   DEPLOY_HOST=… DEPLOY_ROOT=… script/deploy-sigavdi-redirect --remove
+#
+# The block goes at the top of the file between its markers, so a reinstall
+# replaces it rather than stacking copies, --remove takes out exactly what was
+# put in, and the file's other rules -- the ShipRise legacy CRM links, the
+# graceful.dev course redirects, WordPress' own block -- are left alone.
+
+set -euo pipefail
+
+DEPLOY_HOST=${DEPLOY_HOST:?DEPLOY_HOST is required}
+DEPLOY_ROOT=${DEPLOY_ROOT:?DEPLOY_ROOT is required}
+SSHOPTS="-o StrictHostKeyChecking=no"
+SSH_TARGET="${DEPLOY_USER:+${DEPLOY_USER}@}${DEPLOY_HOST}"
+
+RULE_FILE="${BASH_SOURCE%/*}/../sigavdi-redirect.htaccess"
+BEGIN_MARKER="# BEGIN sigavdi.email"
+END_MARKER="# END sigavdi.email"
+REMOTE_RULE_FILE=".sigavdi-redirect.htaccess.incoming"
+
+action=install
+[ "${1:-}" = "--remove" ] && action=remove
+
+# --remove deletes exactly the marked region, so a rule file that strayed
+# outside its markers would leave litter behind on a live site's .htaccess.
+rule=$(cat "$RULE_FILE")
+[[ "$rule" == "$BEGIN_MARKER"* && "$rule" == *"$END_MARKER" ]] ||
+  { echo "$RULE_FILE must begin with '$BEGIN_MARKER' and end with '$END_MARKER'" >&2; exit 1; }
+
+ssh $SSHOPTS "$SSH_TARGET" -- \
+  "cat > $(printf %q "$DEPLOY_ROOT/$REMOTE_RULE_FILE")" < "$RULE_FILE"
+
+ssh $SSHOPTS "$SSH_TARGET" -- bash -s "$DEPLOY_ROOT" "$action" "$REMOTE_RULE_FILE" <<'REMOTE'
+set -euo pipefail
+document_root="$1"
+action="$2"
+rule_file="$document_root/$3"
+
+htaccess="$document_root/.htaccess"
+backup="${htaccess}.before-sigavdi-redirect"
+
+[ -f "$htaccess" ] || : > "$htaccess"
+[ -f "$backup" ] || cp -p "$htaccess" "$backup"
+
+existing="$(mktemp)"
+sed '/^# BEGIN sigavdi\.email$/,/^# END sigavdi\.email$/d' "$htaccess" > "$existing"
+
+if [ "$action" = install ]; then
+  cat "$rule_file" "$existing" > "$htaccess"
+else
+  cat "$existing" > "$htaccess"
+fi
+
+rm -f "$existing" "$rule_file"
+echo "$htaccess now carries $(grep -c '^# BEGIN sigavdi\.email$' "$htaccess" || true) sigavdi.email block(s)"
+REMOTE
