@@ -1,5 +1,19 @@
 # avdi.codes README
 
+## sigavdi.email
+
+`sigavdi.email` and `www.sigavdi.email` are the newsletter's own name and the link under SIGAVDI in every campaign footer. Both are aliases on this application, covered by the same Let's Encrypt certificate as `avdi.codes`, and both 301 to `https://avdi.codes/sigavdi/`.
+
+The rule is `sigavdi-redirect.htaccess`, installed at the top of the document root's `.htaccess` by `script/deploy-sigavdi-redirect`. It is `mod_rewrite` rather than WordPress so that the name keeps answering when the blog cannot boot and no plugin deactivation can take it out.
+
+Because the hostname is an alias on this application, anything the rule does not catch is served by this blog under the newsletter's name — so the rule collapses every path and discards the query string, and exempts only `/.well-known/`, which Let's Encrypt needs in order to renew.
+
+Deploying it:
+
+```
+DEPLOY_HOST=avdi.codes DEPLOY_ROOT=/path/to/public_html script/deploy-sigavdi-redirect
+```
+
 ## WPFusion Notes
 
 The `wpf_cookie` tends to mess with naive caching (e.g. Surge); and there is no on/off switch for setting the `wpf_ref` cookie. Instead, you have to disable the lead source fields (such as "original referrer") in the WP Fusion field mapping settings.

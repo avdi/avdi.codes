@@ -1,0 +1,37 @@
+# BEGIN sigavdi.email
+# sigavdi.email is the newsletter's own name. It is an alias on this
+# application, and it is the link under SIGAVDI in the footer of every campaign.
+# It has exactly one destination: https://avdi.codes/sigavdi/.
+#
+# Installed by script/deploy-sigavdi-redirect. Everything between the BEGIN and
+# END markers is replaced wholesale on each install.
+#
+# mod_rewrite, not WordPress: the rule runs before PHP, so the newsletter's
+# public name keeps answering when the blog cannot boot, and no plugin can be
+# deactivated out from under it. It is also how this host already forwards its
+# course URLs to graceful.dev.
+#
+# Every path collapses to /sigavdi/ rather than being carried across. Because
+# the hostname is an alias on this application, an unredirected
+# sigavdi.email/some-article serves that article -- the entire blog, duplicated
+# under a name that means one page, each copy a rival canonical URL. Carrying
+# the path across would preserve those duplicates instead of retiring them, and
+# a person who clicked "SIGAVDI" wants the newsletter, not whatever the path
+# happened to be.
+#
+# QSD for the same reason: /sigavdi/?p=123 and /sigavdi/?s=term are the blog's
+# own query vars, and letting them ride along would land the reader somewhere
+# other than the newsletter.
+#
+# /.well-known/ is exempt. Let's Encrypt renews this hostname's certificate by
+# fetching a token under that path, and a 301 to a page that answers 200 with
+# the wrong body fails validation. The certificate would expire ninety days
+# later with nothing to connect the two events.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^(www\.)?sigavdi\.email$ [NC]
+RewriteCond %{REQUEST_URI} !^/\.well-known/
+RewriteRule ^ https://avdi.codes/sigavdi/ [R=301,QSD,L]
+</IfModule>
+# END sigavdi.email
