@@ -83,12 +83,6 @@ function avdicodes_allow_ebook_file_uploads($mime_types)
     return $mime_types;
 }
 
-add_filter('mepr-account-nav-subscriptions-label', 'avdicodes_rename_subscriptions_to_products');
-function avdicodes_rename_subscriptions_to_products(): string
-{
-    return 'Products';
-}
-
 add_filter('webfinger_user_resources', 'avdicodes_add_hachyderm_mastodon_alias', 1, 2);
 function avdicodes_add_hachyderm_mastodon_alias($resources, $user)
 {
