@@ -244,3 +244,22 @@ function avdicodes_fluentcrm_add_code_styles_to_emails($design_name)
     </style>
     <?php
 }
+
+// Google Analytics 4 tag. Replaces MonsterInsights (retired 2026-11-15, AVDICODES-GA-SWAP);
+// same measurement id so reports continue. Administrators and editors are not tracked,
+// matching MonsterInsights' ignore_users setting.
+add_action('wp_head', 'avdicodes_google_analytics_tag', 1);
+function avdicodes_google_analytics_tag() {
+    $untracked_roles = array('administrator', 'editor');
+    $user = wp_get_current_user();
+    if ($user && array_intersect($untracked_roles, (array) $user->roles)) {
+        return;
+    }
+    $measurement_id = 'G-J6TJ9WX3NW';
+    printf(
+        '<script async src="%s"></script>' . "\n" .
+        '<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config",%s);</script>' . "\n",
+        esc_url('https://www.googletagmanager.com/gtag/js?id=' . $measurement_id),
+        wp_json_encode($measurement_id)
+    );
+}
