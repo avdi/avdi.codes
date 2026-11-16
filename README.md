@@ -14,6 +14,16 @@ Deploying it:
 DEPLOY_HOST=avdi.codes DEPLOY_ROOT=/path/to/public_html script/deploy-sigavdi-redirect
 ```
 
+## Server-side code that lives in this repo
+
+Besides the theme and the site plugin, three pieces run on the server outside `wp-content/themes` and `wp-content/plugins`. The repo copy is the source; the server copy must match it byte for byte.
+
+- `cache-config.php` is Surge's configuration, at the document root. It carries the `fpassthru()` polyfill, the `wpf_ref` cookie exemption, and `surge_accept_prefers_activitypub()`, a copy of the ActivityPub plugin's q-aware `accept_prefers_activitypub()` so that Mastodon's `application/activity+json, ..., text/html;q=0.1` is cached as ActivityPub JSON. It loads on every request and on every `wp` call, so lint it on the server (`php -l`) before moving it into place. Re-copy the function when the ActivityPub plugin changes it.
+- `wp-content/mu-plugins/shiprise-thrive-fluentcrm-bridge.php` forwards Thrive form sign-ups to a FluentCRM incoming webhook on shiprise.com, because the local FluentCRM is gone. The webhook URL is in the `shiprise_thrive_fcrm_webhook` option, never in the file; without it the bridge does nothing.
+- `wp-content/mu-plugins/shiprise-gm-boost.php` boosts (ActivityPub Announce) avdi.org posts tagged `goodmorning` from `@avdi@avdi.codes`. The `shiprise_gm_boost_mode` option is `off`, `shadow` or `live`.
+
+The mu-plugins were installed on the server before they were committed here; the first commit of each is the server's copy, unchanged.
+
 ## WPFusion Notes
 
 The `wpf_cookie` tends to mess with naive caching (e.g. Surge); and there is no on/off switch for setting the `wpf_ref` cookie. Instead, you have to disable the lead source fields (such as "original referrer") in the WP Fusion field mapping settings.
