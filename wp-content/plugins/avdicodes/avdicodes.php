@@ -263,3 +263,26 @@ function avdicodes_google_analytics_tag() {
         wp_json_encode($measurement_id)
     );
 }
+
+// Thrive's builder types stay public so the builder can address an element by query
+// string (?tcb_lightbox=..., ?tvo_display=..., ?post_type=tcb_symbol&p=...), but those
+// URLs are builder internals, not content: a lightbox URL is a signup form with no page
+// around it, and a symbol or Optimize tag URL is an empty archive. Keep the builder's
+// post types and taxonomies out of the core sitemaps.
+add_filter('wp_sitemaps_post_types', 'avdicodes_sitemap_post_types');
+function avdicodes_sitemap_post_types($post_types) {
+    $thrive_builder_post_types = array(
+        'tcb_symbol',
+        'tcb_lightbox',
+        'tvo_display',
+        'tvo_display_post',
+        'tvo_capture',
+    );
+    return array_diff_key($post_types, array_flip($thrive_builder_post_types));
+}
+
+add_filter('wp_sitemaps_taxonomies', 'avdicodes_sitemap_taxonomies');
+function avdicodes_sitemap_taxonomies($taxonomies) {
+    $thrive_builder_taxonomies = array('tvo_tags', 'tcb_symbols_tax');
+    return array_diff_key($taxonomies, array_flip($thrive_builder_taxonomies));
+}
